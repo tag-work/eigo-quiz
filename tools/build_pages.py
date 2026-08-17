@@ -9,7 +9,7 @@ import json, os, sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE = "https://tagc.works/eigo-quiz"
-GA_ID = "G-XXXXXXXXXX"   # ← 実際の測定IDに合わせる
+GA_ID = "G-YF2F6KJ848"   # ← 実際の測定IDに合わせる
 GA = f"""<!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id={GA_ID}"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments)}}
