@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
 <meta name="description" content="5歳〜小学生むけの無料英単語クイズ。読み上げ付きの4択で、全300語をシールを集めながら覚えられます。登録不要・広告なし。">
 <link rel="canonical" href="https://tagc.works/eigo-quiz/">
 <link rel="manifest" href="./manifest.webmanifest">
@@ -27,6 +27,12 @@ gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>
 <style>
 :root{--paper:#EDEBFF;--ink:#2E2350;--pink:#FF6FA5;--sun:#FFD23F;--grass:#3DBE7A;--sky:#57BCF0;--skin:#FFB5A3}
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+html,body{touch-action:manipulation;overscroll-behavior:none;-webkit-touch-callout:none;
+  -webkit-user-select:none;user-select:none}
+button,.ch,.cell,.slot,.chipbtn,.lv,.mbtn,.spk,.cta,.subcta,.total{touch-action:manipulation}
+#fx{contain:layout style paint}
+.conf,.spark,.bigstamp,.flyer,.ring,.word-pop,.mascot{will-change:transform,opacity}
 body{font-family:"Zen Maru Gothic","Hiragino Maru Gothic ProN",sans-serif;color:var(--ink);
   background:var(--paper);
   background-image:radial-gradient(circle at 15% 8%,#FFFFFF99 0 13px,transparent 14px),
@@ -755,7 +761,7 @@ function celebrate(w,level,slotEl){
     s.style.setProperty("--rr",(Math.random()*360|0)+"deg");
     s.textContent=["✨","⭐","💫","🌟"][i%4];s.style.animationDelay=(i*.02)+"s";fx.appendChild(s);
   }
-  const n=[18,30,46][level]||18;
+  const n=Math.round(([18,30,46][level]||18)*(innerWidth<430?.6:1));
   for(let i=0;i<n;i++){
     const c=document.createElement("div");c.className="conf";c.style.left=(Math.random()*100)+"vw";
     c.style.background=CONF[i%CONF.length];c.style.animationDuration=(1.1+Math.random()*.9)+"s";
@@ -863,7 +869,7 @@ function finishPage(){
     "cheer");
   $("pageVeil").classList.add("on");
   beep([523,659,784,1047],.3);
-  if(!reduced)for(let i=0;i<44;i++){
+  if(!reduced)for(let i=0,N=innerWidth<430?26:44;i<N;i++){
     const c=document.createElement("div");c.className="conf";c.style.left=(Math.random()*100)+"vw";
     c.style.background=CONF[i%CONF.length];c.style.animationDuration=(1.2+Math.random())+"s";
     c.style.animationDelay=(Math.random()*.6)+"s";$("fx").appendChild(c);
@@ -889,6 +895,11 @@ document.querySelectorAll(".lv").forEach(b=>{
   b.onclick=()=>{save.level=Number(b.dataset.lv);store.save(save);refreshCover()};
 });
 refreshCover();
+
+/* ピンチでの拡大を止める（iOS Safari） */
+["gesturestart","gesturechange","gestureend"].forEach(ev=>
+  document.addEventListener(ev,e=>e.preventDefault(),{passive:false}));
+document.addEventListener("touchmove",e=>{if(e.touches.length>1)e.preventDefault()},{passive:false});
 
 $("demoSpk").onclick=()=>speak("apple");
 document.querySelectorAll("#demoCh .ch").forEach(b=>{

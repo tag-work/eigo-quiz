@@ -1,5 +1,5 @@
 /* えいご シールクイズ / Service Worker */
-const V="eigo-quiz-v1";
+const V="eigo-quiz-v2";
 const SHELL=["./","./index.html","./data/words.json","./manifest.webmanifest",
   "./icons/icon-192.png","./icons/icon-512.png","./icons/apple-touch-icon.png"];
 
