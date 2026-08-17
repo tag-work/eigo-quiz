@@ -41,6 +41,7 @@ GROUPS = [
  ("greetings","あいさつ",["greeting"],"こんにちは・ありがとう・ごめんなさい。今日から使えるあいさつの英語です。"),
 ]
 LVN = {1:"レベル1（5〜6歳）",2:"レベル2（小1〜3）",3:"レベル3（小4〜6）"}
+LVS = {1:"レベル1",2:"レベル2",3:"レベル3"}   # 表のセル用（LVN を5文字で切ると括弧が残る）
 
 CSS = '''*{box-sizing:border-box;margin:0;padding:0}
 :root{--paper:#EDEBFF;--ink:#2E2350;--pink:#FF6FA5;--sun:#FFD23F}
@@ -70,30 +71,57 @@ font-weight:900;font-size:14px;box-shadow:0 3px 0 var(--ink)}
 footer{margin-top:40px;font-size:12px;opacity:.7;text-align:center}
 ul{margin:0 0 12px 20px;font-size:15px}li{margin-bottom:5px}'''
 
-def page(title, desc, canon, body, crumb=""):
+def crumbs_ld(items):
+    """items: [(name, url or None)] — 最後は現在ページなので url は None"""
+    els = ",".join(
+        '{"@type":"ListItem","position":%d,"name":"%s"%s}' % (
+            i + 1, n, f',"item":"{u}"' if u else "")
+        for i, (n, u) in enumerate(items))
+    return ('<script type="application/ld+json">'
+            '{"@context":"https://schema.org","@type":"BreadcrumbList",'
+            f'"itemListElement":[{els}]}}</script>')
+
+
+def page(title, desc, canon, body, crumb_items=()):
+    crumb = ""
+    ld = ""
+    if crumb_items:
+        crumb = '<div class="crumb">' + " ＞ ".join(
+            f'<a href="{u}">{n}</a>' if u else n for n, u in crumb_items) + "</div>"
+        ld = "\n" + crumbs_ld(crumb_items)
     return f'''<!DOCTYPE html><html lang="ja"><head><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{title}</title>
 <meta name="description" content="{desc}">
 <link rel="canonical" href="{canon}">
 <link rel="apple-touch-icon" href="{BASE}/icons/apple-touch-icon.png">
-<meta property="og:title" content="{title}"><meta property="og:description" content="{desc}">
-<meta property="og:image" content="{BASE}/icons/icon-512.png"><meta property="og:url" content="{canon}">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="えいご シールクイズ">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="{title}">
+<meta property="og:description" content="{desc}">
+<meta property="og:image" content="{BASE}/icons/icon-512.png">
+<meta property="og:url" content="{canon}">
+<meta name="twitter:card" content="summary">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&family=Baloo+2:wght@600;800&display=swap" rel="stylesheet">
-<style>{CSS}</style>{GA}</head><body><div class="wrap">{crumb}{body}
+<style>{CSS}</style>{ld}
+{GA}</head><body><div class="wrap">{crumb}{body}
 <footer>© <a href="https://tagc.works/">tagc</a> ／ <a href="{BASE}/">えいご シールクイズ</a> ／ <a href="{BASE}/for-parents/">おうちの方へ</a></footer>
 </div></body></html>'''
 
 def wtable(ws):
-    rows = "".join(f'<tr><td class="en">{w["en"]}</td><td class="kana">{w.get("kana","")}</td><td>{w["ja"]}</td><td class="lv">{LVN[w["level"]][:5]}</td></tr>' for w in ws)
+    rows = "".join(f'<tr><td class="en">{w["en"]}</td><td class="kana">{w.get("kana","")}</td><td>{w["ja"]}</td><td class="lv">{LVS[w["level"]]}</td></tr>' for w in ws)
     return f'<table><thead><tr><th>英単語</th><th>読み方</th><th>いみ</th><th>レベル</th></tr></thead><tbody>{rows}</tbody></table>'
 
 for gslug, gname, cats, intro in GROUPS:
     ws = [w for w in WORDS if w["cat"] in cats]
     os.makedirs(f"{ROOT}/words/{gslug}", exist_ok=True)
-    title = f"{gname}の英単語{len(ws)}個 一覧｜5歳からの無料クイズで練習"
-    desc = f"{gname}に関する英単語{len(ws)}個を意味つきで一覧にしました。{intro[:40]}"
+    # 検索語（「{カテゴリ}の英単語 一覧」）を先頭に、ブランド名は末尾に置く
+    # 日本語のSERPは35文字前後で切れる。カテゴリ名が長いものでも収まる長さにする
+    title = f"{gname}の英単語{len(ws)}個 一覧（読み方つき）｜えいご シールクイズ"
+    desc = (f"{gname}の英単語{len(ws)}個を、カタカナの読み方と意味つきで一覧にしました。"
+            f"{intro}そのまま音声つきの無料クイズで練習できます。")
     ex = [w for w in ws if w.get("ex")]
     exhtml = ""
     if ex:
@@ -107,9 +135,9 @@ for gslug, gname, cats, intro in GROUPS:
 <p>いちどに全部は覚えられません。<b>1日5〜10個</b>を目安に、声に出して読むところから始めるのがおすすめです。上の表を見ながら親子で言い合って、そのあとクイズで確認すると定着しやすくなります。</p>
 <a class="btn" href="{BASE}/">クイズで {gname} を練習する</a>
 <p><a href="{BASE}/words/">ほかのカテゴリの単語一覧を見る</a></p>'''
-    crumb = f'<div class="crumb"><a href="{BASE}/">トップ</a> ＞ <a href="{BASE}/words/">単語一覧</a> ＞ {gname}</div>'
+    crumb_items = [("トップ", f"{BASE}/"), ("単語一覧", f"{BASE}/words/"), (gname, None)]
     open(f"{ROOT}/words/{gslug}/index.html","w",encoding="utf-8").write(
-        page(title, desc, f"{BASE}/words/{gslug}/", body, crumb))
+        page(title, desc, f"{BASE}/words/{gslug}/", body, crumb_items))
 
 cards = "".join(f'<a href="{BASE}/words/{g}/">{n}<span>{len([w for w in WORDS if w["cat"] in c])}語</span></a>' for g,n,c,_ in GROUPS)
 body = f'''<h1>小学生・幼児むけ 英単語一覧（全300語）</h1>
@@ -123,9 +151,10 @@ body = f'''<h1>小学生・幼児むけ 英単語一覧（全300語）</h1>
 <a class="btn" href="{BASE}/">クイズで練習する</a>
 <p><a href="{BASE}/for-parents/">おうちの方へ（使い方と安全性について）</a></p>'''
 open(f"{ROOT}/words/index.html","w",encoding="utf-8").write(page(
- "幼児・小学生の英単語一覧300語（意味つき）｜えいご シールクイズ",
- "5歳から小学生までに使う英単語300語を20カテゴリの一覧に。すべて意味つき・音声つきクイズで練習できます。",
- f"{BASE}/words/", body, f'<div class="crumb"><a href="{BASE}/">トップ</a> ＞ 単語一覧</div>'))
+ "小学生・幼児の英単語一覧 300語（読み方つき）｜えいご シールクイズ",
+ "小学校で習う英単語300語を20カテゴリに分けて一覧にしました。カタカナの読み方と意味つき。"
+ "そのまま音声つきの無料クイズで練習できます。5歳から、登録不要・広告なし。",
+ f"{BASE}/words/", body, [("トップ", f"{BASE}/"), ("単語一覧", None)]))
 
 
 # sitemap（ドメイン直下用のものは tag-work.github.io 側にもコピーすること）
