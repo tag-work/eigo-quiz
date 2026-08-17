@@ -225,6 +225,14 @@ button{font-family:inherit;color:var(--ink);cursor:pointer}
   justify-content:center;font-size:26px;background:var(--sun)}
 .pagegrid div.empty{border-style:dashed;background:#fff;opacity:.45}
 .modal .talkrow{margin:0 0 8px}
+
+.sibling{display:flex;align-items:center;gap:11px;text-decoration:none;color:inherit;background:#fff;
+  border:3px solid var(--ink);border-radius:20px;padding:12px 14px;box-shadow:0 5px 0 var(--ink);margin-top:12px}
+.sibling:active{transform:translateY(5px);box-shadow:none}
+.sibling .ic{font-size:26px;flex:none}
+.sibling b{display:block;font-size:15.5px;font-weight:900;line-height:1.3}
+.sibling i{display:block;font-style:normal;font-size:11px;font-weight:700;opacity:.65;margin-top:1px}
+.sibling .arrow{margin-left:auto;font-family:"Baloo 2",sans-serif;font-weight:800;opacity:.5}
 :focus-visible{outline:4px solid var(--pink);outline-offset:3px}
 @media (prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;animation-iteration-count:1!important}}
 </style>
@@ -272,6 +280,12 @@ button{font-family:inherit;color:var(--ink);cursor:pointer}
 
   <button class="cta" id="startBtn">はじめる！<small>10もんずつ・300もんまで あそべる</small></button>
   <button class="subcta" id="albumBtn">📒 シールずかんを みる</button>
+
+  <a class="sibling" href="../sansu-quiz/">
+    <span class="ic">➕</span>
+    <span><b>たしざんクイズ</b><i>くりあがりも ひっ算で</i></span>
+    <span class="arrow">→</span>
+  </a>
 
   <p class="parent">
     1セット10問・約2分。最大300問まで続けて遊べます。<br>
