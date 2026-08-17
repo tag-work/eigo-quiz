@@ -1,0 +1,2702 @@
+[
+ {
+  "en": "dog",
+  "ja": "いぬ",
+  "kana": "ドッグ",
+  "emoji": "🐶",
+  "cat": "animal",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "cat",
+  "ja": "ねこ",
+  "kana": "キャット",
+  "emoji": "🐱",
+  "cat": "animal",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "bird",
+  "ja": "とり",
+  "kana": "バード",
+  "emoji": "🐦",
+  "cat": "animal",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "fish",
+  "ja": "さかな",
+  "kana": "フィッシュ",
+  "emoji": "🐟",
+  "cat": "animal",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "rabbit",
+  "ja": "うさぎ",
+  "kana": "ラビット",
+  "emoji": "🐰",
+  "cat": "animal",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "bear",
+  "ja": "くま",
+  "kana": "ベア",
+  "emoji": "🐻",
+  "cat": "animal",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "lion",
+  "ja": "ライオン",
+  "kana": "ライオン",
+  "emoji": "🦁",
+  "cat": "animal",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "elephant",
+  "ja": "ぞう",
+  "kana": "エレファント",
+  "emoji": "🐘",
+  "cat": "animal",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "monkey",
+  "ja": "さる",
+  "kana": "モンキー",
+  "emoji": "🐵",
+  "cat": "animal",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "panda",
+  "ja": "パンダ",
+  "kana": "パンダ",
+  "emoji": "🐼",
+  "cat": "animal",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "tiger",
+  "ja": "とら",
+  "kana": "タイガー",
+  "emoji": "🐯",
+  "cat": "animal",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "pig",
+  "ja": "ぶた",
+  "kana": "ピッグ",
+  "emoji": "🐷",
+  "cat": "animal",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "cow",
+  "ja": "うし",
+  "kana": "カウ",
+  "emoji": "🐮",
+  "cat": "animal",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "horse",
+  "ja": "うま",
+  "kana": "ホース",
+  "emoji": "🐴",
+  "cat": "animal",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "frog",
+  "ja": "かえる",
+  "kana": "フロッグ",
+  "emoji": "🐸",
+  "cat": "animal",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "mouse",
+  "ja": "ねずみ",
+  "kana": "マウス",
+  "emoji": "🐭",
+  "cat": "animal",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "sheep",
+  "ja": "ひつじ",
+  "kana": "シープ",
+  "emoji": "🐑",
+  "cat": "animal",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "duck",
+  "ja": "あひる",
+  "kana": "ダック",
+  "emoji": "🦆",
+  "cat": "animal",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "penguin",
+  "ja": "ペンギン",
+  "kana": "ペンギン",
+  "emoji": "🐧",
+  "cat": "animal",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "turtle",
+  "ja": "かめ",
+  "kana": "タートル",
+  "emoji": "🐢",
+  "cat": "animal",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "apple",
+  "ja": "りんご",
+  "kana": "アップル",
+  "emoji": "🍎",
+  "cat": "food",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "banana",
+  "ja": "バナナ",
+  "kana": "バナナ",
+  "emoji": "🍌",
+  "cat": "food",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "orange",
+  "ja": "オレンジ",
+  "kana": "オレンジ",
+  "emoji": "🍊",
+  "cat": "food",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "grape",
+  "ja": "ぶどう",
+  "kana": "グレープ",
+  "emoji": "🍇",
+  "cat": "food",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "strawberry",
+  "ja": "いちご",
+  "kana": "ストロベリー",
+  "emoji": "🍓",
+  "cat": "food",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "watermelon",
+  "ja": "すいか",
+  "kana": "ウォーターメロン",
+  "emoji": "🍉",
+  "cat": "food",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "peach",
+  "ja": "もも",
+  "kana": "ピーチ",
+  "emoji": "🍑",
+  "cat": "food",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "tomato",
+  "ja": "トマト",
+  "kana": "トマト",
+  "emoji": "🍅",
+  "cat": "food",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "carrot",
+  "ja": "にんじん",
+  "kana": "キャロット",
+  "emoji": "🥕",
+  "cat": "food",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "corn",
+  "ja": "とうもろこし",
+  "kana": "コーン",
+  "emoji": "🌽",
+  "cat": "food",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "potato",
+  "ja": "じゃがいも",
+  "kana": "ポテト",
+  "emoji": "🥔",
+  "cat": "food",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "bread",
+  "ja": "パン",
+  "kana": "ブレッド",
+  "emoji": "🍞",
+  "cat": "food",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "egg",
+  "ja": "たまご",
+  "kana": "エッグ",
+  "emoji": "🥚",
+  "cat": "food",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "milk",
+  "ja": "ぎゅうにゅう",
+  "kana": "ミルク",
+  "emoji": "🥛",
+  "cat": "food",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "rice",
+  "ja": "ごはん",
+  "kana": "ライス",
+  "emoji": "🍚",
+  "cat": "food",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "cake",
+  "ja": "ケーキ",
+  "kana": "ケイク",
+  "emoji": "🍰",
+  "cat": "food",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "ice cream",
+  "ja": "アイスクリーム",
+  "kana": "アイスクリーム",
+  "emoji": "🍦",
+  "cat": "food",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "candy",
+  "ja": "あめだま",
+  "kana": "キャンディ",
+  "emoji": "🍬",
+  "cat": "food",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "cookie",
+  "ja": "クッキー",
+  "kana": "クッキー",
+  "emoji": "🍪",
+  "cat": "food",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "juice",
+  "ja": "ジュース",
+  "kana": "ジュース",
+  "emoji": "🧃",
+  "cat": "food",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "red",
+  "ja": "あか",
+  "kana": "レッド",
+  "emoji": "🟥",
+  "cat": "color",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "blue",
+  "ja": "あお",
+  "kana": "ブルー",
+  "emoji": "🟦",
+  "cat": "color",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "yellow",
+  "ja": "きいろ",
+  "kana": "イエロー",
+  "emoji": "🟨",
+  "cat": "color",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "green",
+  "ja": "みどり",
+  "kana": "グリーン",
+  "emoji": "🟩",
+  "cat": "color",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "black",
+  "ja": "くろ",
+  "kana": "ブラック",
+  "emoji": "⬛",
+  "cat": "color",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "white",
+  "ja": "しろ",
+  "kana": "ホワイト",
+  "emoji": "⬜",
+  "cat": "color",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "pink",
+  "ja": "ピンク",
+  "kana": "ピンク",
+  "emoji": "🩷",
+  "cat": "color",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "purple",
+  "ja": "むらさき",
+  "kana": "パープル",
+  "emoji": "🟪",
+  "cat": "color",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "brown",
+  "ja": "ちゃいろ",
+  "kana": "ブラウン",
+  "emoji": "🟫",
+  "cat": "color",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "circle",
+  "ja": "まる",
+  "kana": "サークル",
+  "emoji": "⭕",
+  "cat": "color",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "heart",
+  "ja": "ハート",
+  "kana": "ハート",
+  "emoji": "💗",
+  "cat": "color",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "eye",
+  "ja": "め",
+  "kana": "アイ",
+  "emoji": "👁️",
+  "cat": "body",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "ear",
+  "ja": "みみ",
+  "kana": "イヤー",
+  "emoji": "👂",
+  "cat": "body",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "nose",
+  "ja": "はな",
+  "kana": "ノーズ",
+  "emoji": "👃",
+  "cat": "body",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "mouth",
+  "ja": "くち",
+  "kana": "マウス",
+  "emoji": "👄",
+  "cat": "body",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "hand",
+  "ja": "て",
+  "kana": "ハンド",
+  "emoji": "✋",
+  "cat": "body",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "foot",
+  "ja": "あし",
+  "kana": "フット",
+  "emoji": "🦶",
+  "cat": "body",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "tooth",
+  "ja": "は",
+  "kana": "トゥース",
+  "emoji": "🦷",
+  "cat": "body",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "hair",
+  "ja": "かみのけ",
+  "kana": "ヘアー",
+  "emoji": "💇",
+  "cat": "body",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "mother",
+  "ja": "おかあさん",
+  "kana": "マザー",
+  "emoji": "👩",
+  "cat": "family",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "father",
+  "ja": "おとうさん",
+  "kana": "ファーザー",
+  "emoji": "👨",
+  "cat": "family",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "sister",
+  "ja": "おねえさん",
+  "kana": "シスター",
+  "emoji": "👧",
+  "cat": "family",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "brother",
+  "ja": "おにいさん",
+  "kana": "ブラザー",
+  "emoji": "👦",
+  "cat": "family",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "baby",
+  "ja": "あかちゃん",
+  "kana": "ベイビー",
+  "emoji": "👶",
+  "cat": "family",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "grandmother",
+  "ja": "おばあさん",
+  "kana": "グランドマザー",
+  "emoji": "👵",
+  "cat": "family",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "grandfather",
+  "ja": "おじいさん",
+  "kana": "グランドファーザー",
+  "emoji": "👴",
+  "cat": "family",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "family",
+  "ja": "かぞく",
+  "kana": "ファミリー",
+  "emoji": "👨‍👩‍👧",
+  "cat": "family",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "book",
+  "ja": "ほん",
+  "kana": "ブック",
+  "emoji": "📚",
+  "cat": "school",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "pencil",
+  "ja": "えんぴつ",
+  "kana": "ペンシル",
+  "emoji": "✏️",
+  "cat": "school",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "crayon",
+  "ja": "クレヨン",
+  "kana": "クレヨン",
+  "emoji": "🖍️",
+  "cat": "school",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "scissors",
+  "ja": "はさみ",
+  "kana": "シザーズ",
+  "emoji": "✂️",
+  "cat": "school",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "bag",
+  "ja": "かばん",
+  "kana": "バッグ",
+  "emoji": "🎒",
+  "cat": "school",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "ruler",
+  "ja": "ものさし",
+  "kana": "ルーラー",
+  "emoji": "📏",
+  "cat": "school",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "clock",
+  "ja": "とけい",
+  "kana": "クロック",
+  "emoji": "🕐",
+  "cat": "school",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "ball",
+  "ja": "ボール",
+  "kana": "ボール",
+  "emoji": "⚽",
+  "cat": "school",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "doll",
+  "ja": "にんぎょう",
+  "kana": "ドール",
+  "emoji": "🪆",
+  "cat": "school",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "paper",
+  "ja": "かみ",
+  "kana": "ペーパー",
+  "emoji": "📄",
+  "cat": "school",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "car",
+  "ja": "くるま",
+  "kana": "カー",
+  "emoji": "🚗",
+  "cat": "vehicle",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "bus",
+  "ja": "バス",
+  "kana": "バス",
+  "emoji": "🚌",
+  "cat": "vehicle",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "train",
+  "ja": "でんしゃ",
+  "kana": "トレイン",
+  "emoji": "🚃",
+  "cat": "vehicle",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "airplane",
+  "ja": "ひこうき",
+  "kana": "エアプレイン",
+  "emoji": "✈️",
+  "cat": "vehicle",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "ship",
+  "ja": "ふね",
+  "kana": "シップ",
+  "emoji": "🚢",
+  "cat": "vehicle",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "bicycle",
+  "ja": "じてんしゃ",
+  "kana": "バイシクル",
+  "emoji": "🚲",
+  "cat": "vehicle",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "taxi",
+  "ja": "タクシー",
+  "kana": "タクシー",
+  "emoji": "🚕",
+  "cat": "vehicle",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "rocket",
+  "ja": "ロケット",
+  "kana": "ロケット",
+  "emoji": "🚀",
+  "cat": "vehicle",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "sun",
+  "ja": "たいよう",
+  "kana": "サン",
+  "emoji": "☀️",
+  "cat": "nature",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "moon",
+  "ja": "つき",
+  "kana": "ムーン",
+  "emoji": "🌙",
+  "cat": "nature",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "star",
+  "ja": "ほし",
+  "kana": "スター",
+  "emoji": "⭐",
+  "cat": "nature",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "rain",
+  "ja": "あめ",
+  "kana": "レイン",
+  "emoji": "🌧️",
+  "cat": "nature",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "snow",
+  "ja": "ゆき",
+  "kana": "スノー",
+  "emoji": "❄️",
+  "cat": "nature",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "cloud",
+  "ja": "くも",
+  "kana": "クラウド",
+  "emoji": "☁️",
+  "cat": "nature",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "wind",
+  "ja": "かぜ",
+  "kana": "ウィンド",
+  "emoji": "🌬️",
+  "cat": "nature",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "rainbow",
+  "ja": "にじ",
+  "kana": "レインボー",
+  "emoji": "🌈",
+  "cat": "nature",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "tree",
+  "ja": "き",
+  "kana": "ツリー",
+  "emoji": "🌳",
+  "cat": "nature",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "flower",
+  "ja": "おはな",
+  "kana": "フラワー",
+  "emoji": "🌸",
+  "cat": "nature",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "mountain",
+  "ja": "やま",
+  "kana": "マウンテン",
+  "emoji": "⛰️",
+  "cat": "nature",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "river",
+  "ja": "かわ",
+  "kana": "リバー",
+  "emoji": "🏞️",
+  "cat": "nature",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "sea",
+  "ja": "うみ",
+  "kana": "シー",
+  "emoji": "🌊",
+  "cat": "nature",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "eat",
+  "ja": "たべる",
+  "kana": "イート",
+  "emoji": "🍽️",
+  "cat": "action",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "drink",
+  "ja": "のむ",
+  "kana": "ドリンク",
+  "emoji": "🥤",
+  "cat": "action",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "run",
+  "ja": "はしる",
+  "kana": "ラン",
+  "emoji": "🏃",
+  "cat": "action",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "walk",
+  "ja": "あるく",
+  "kana": "ウォーク",
+  "emoji": "🚶",
+  "cat": "action",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "jump",
+  "ja": "とぶ",
+  "kana": "ジャンプ",
+  "emoji": "🦘",
+  "cat": "action",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "sleep",
+  "ja": "ねる",
+  "kana": "スリープ",
+  "emoji": "😴",
+  "cat": "action",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "read",
+  "ja": "よむ",
+  "kana": "リード",
+  "emoji": "📖",
+  "cat": "action",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "write",
+  "ja": "かく",
+  "kana": "ライト",
+  "emoji": "📝",
+  "cat": "action",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "sing",
+  "ja": "うたう",
+  "kana": "シング",
+  "emoji": "🎤",
+  "cat": "action",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "dance",
+  "ja": "おどる",
+  "kana": "ダンス",
+  "emoji": "💃",
+  "cat": "action",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "swim",
+  "ja": "およぐ",
+  "kana": "スイム",
+  "emoji": "🏊",
+  "cat": "action",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "play",
+  "ja": "あそぶ",
+  "kana": "プレイ",
+  "emoji": "🪀",
+  "cat": "action",
+  "level": 1,
+  "ex": ""
+ },
+ {
+  "en": "one",
+  "ja": "いち",
+  "kana": "ワン",
+  "emoji": "1️⃣",
+  "cat": "number",
+  "level": 2,
+  "ex": ""
+ },
+ {
+  "en": "two",
+  "ja": "に",
+  "kana": "トゥー",
+  "emoji": "2️⃣",
+  "cat": "number",
+  "level": 2,
+  "ex": ""
+ },
+ {
+  "en": "three",
+  "ja": "さん",
+  "kana": "スリー",
+  "emoji": "3️⃣",
+  "cat": "number",
+  "level": 2,
+  "ex": ""
+ },
+ {
+  "en": "four",
+  "ja": "よん",
+  "kana": "フォー",
+  "emoji": "4️⃣",
+  "cat": "number",
+  "level": 2,
+  "ex": ""
+ },
+ {
+  "en": "five",
+  "ja": "ご",
+  "kana": "ファイブ",
+  "emoji": "5️⃣",
+  "cat": "number",
+  "level": 2,
+  "ex": ""
+ },
+ {
+  "en": "six",
+  "ja": "ろく",
+  "kana": "シックス",
+  "emoji": "6️⃣",
+  "cat": "number",
+  "level": 2,
+  "ex": ""
+ },
+ {
+  "en": "seven",
+  "ja": "なな",
+  "kana": "セブン",
+  "emoji": "7️⃣",
+  "cat": "number",
+  "level": 2,
+  "ex": ""
+ },
+ {
+  "en": "eight",
+  "ja": "はち",
+  "kana": "エイト",
+  "emoji": "8️⃣",
+  "cat": "number",
+  "level": 2,
+  "ex": ""
+ },
+ {
+  "en": "nine",
+  "ja": "きゅう",
+  "kana": "ナイン",
+  "emoji": "9️⃣",
+  "cat": "number",
+  "level": 2,
+  "ex": ""
+ },
+ {
+  "en": "ten",
+  "ja": "じゅう",
+  "kana": "テン",
+  "emoji": "🔟",
+  "cat": "number",
+  "level": 2,
+  "ex": ""
+ },
+ {
+  "en": "eleven",
+  "ja": "じゅういち",
+  "kana": "イレブン",
+  "emoji": "",
+  "cat": "number",
+  "level": 2,
+  "ex": "I am eleven. わたしは じゅういち さい"
+ },
+ {
+  "en": "twelve",
+  "ja": "じゅうに",
+  "kana": "トゥエルブ",
+  "emoji": "",
+  "cat": "number",
+  "level": 2,
+  "ex": "I am twelve. わたしは じゅうに さい"
+ },
+ {
+  "en": "twenty",
+  "ja": "にじゅう",
+  "kana": "トゥエンティ",
+  "emoji": "",
+  "cat": "number",
+  "level": 2,
+  "ex": "I am twenty. わたしは にじゅう さい"
+ },
+ {
+  "en": "Monday",
+  "ja": "げつようび",
+  "kana": "マンデイ",
+  "emoji": "",
+  "cat": "calendar",
+  "level": 2,
+  "ex": "Today is Monday. きょうは げつようび"
+ },
+ {
+  "en": "Tuesday",
+  "ja": "かようび",
+  "kana": "チューズデイ",
+  "emoji": "",
+  "cat": "calendar",
+  "level": 2,
+  "ex": "Today is Tuesday. きょうは かようび"
+ },
+ {
+  "en": "Wednesday",
+  "ja": "すいようび",
+  "kana": "ウェンズデイ",
+  "emoji": "",
+  "cat": "calendar",
+  "level": 2,
+  "ex": "Today is Wednesday. きょうは すいようび"
+ },
+ {
+  "en": "Thursday",
+  "ja": "もくようび",
+  "kana": "サーズデイ",
+  "emoji": "",
+  "cat": "calendar",
+  "level": 2,
+  "ex": "Today is Thursday. きょうは もくようび"
+ },
+ {
+  "en": "Friday",
+  "ja": "きんようび",
+  "kana": "フライデイ",
+  "emoji": "",
+  "cat": "calendar",
+  "level": 2,
+  "ex": "Today is Friday. きょうは きんようび"
+ },
+ {
+  "en": "Saturday",
+  "ja": "どようび",
+  "kana": "サタデイ",
+  "emoji": "",
+  "cat": "calendar",
+  "level": 2,
+  "ex": "Today is Saturday. きょうは どようび"
+ },
+ {
+  "en": "Sunday",
+  "ja": "にちようび",
+  "kana": "サンデイ",
+  "emoji": "",
+  "cat": "calendar",
+  "level": 2,
+  "ex": "Today is Sunday. きょうは にちようび"
+ },
+ {
+  "en": "January",
+  "ja": "いちがつ",
+  "kana": "ジャニュアリー",
+  "emoji": "",
+  "cat": "calendar",
+  "level": 2,
+  "ex": "It is January. いまは いちがつ"
+ },
+ {
+  "en": "February",
+  "ja": "にがつ",
+  "kana": "フェブラリー",
+  "emoji": "",
+  "cat": "calendar",
+  "level": 2,
+  "ex": "It is February. いまは にがつ"
+ },
+ {
+  "en": "March",
+  "ja": "さんがつ",
+  "kana": "マーチ",
+  "emoji": "",
+  "cat": "calendar",
+  "level": 2,
+  "ex": "It is March. いまは さんがつ"
+ },
+ {
+  "en": "April",
+  "ja": "しがつ",
+  "kana": "エイプリル",
+  "emoji": "",
+  "cat": "calendar",
+  "level": 2,
+  "ex": "It is April. いまは しがつ"
+ },
+ {
+  "en": "May",
+  "ja": "ごがつ",
+  "kana": "メイ",
+  "emoji": "",
+  "cat": "calendar",
+  "level": 2,
+  "ex": "It is May. いまは ごがつ"
+ },
+ {
+  "en": "June",
+  "ja": "ろくがつ",
+  "kana": "ジューン",
+  "emoji": "",
+  "cat": "calendar",
+  "level": 2,
+  "ex": "It is June. いまは ろくがつ"
+ },
+ {
+  "en": "July",
+  "ja": "しちがつ",
+  "kana": "ジュライ",
+  "emoji": "",
+  "cat": "calendar",
+  "level": 2,
+  "ex": "It is July. いまは しちがつ"
+ },
+ {
+  "en": "August",
+  "ja": "はちがつ",
+  "kana": "オーガスト",
+  "emoji": "",
+  "cat": "calendar",
+  "level": 2,
+  "ex": "It is August. いまは はちがつ"
+ },
+ {
+  "en": "September",
+  "ja": "くがつ",
+  "kana": "セプテンバー",
+  "emoji": "",
+  "cat": "calendar",
+  "level": 2,
+  "ex": "It is September. いまは くがつ"
+ },
+ {
+  "en": "October",
+  "ja": "じゅうがつ",
+  "kana": "オクトーバー",
+  "emoji": "",
+  "cat": "calendar",
+  "level": 2,
+  "ex": "It is October. いまは じゅうがつ"
+ },
+ {
+  "en": "November",
+  "ja": "じゅういちがつ",
+  "kana": "ノベンバー",
+  "emoji": "",
+  "cat": "calendar",
+  "level": 2,
+  "ex": "It is November. いまは じゅういちがつ"
+ },
+ {
+  "en": "December",
+  "ja": "じゅうにがつ",
+  "kana": "ディセンバー",
+  "emoji": "",
+  "cat": "calendar",
+  "level": 2,
+  "ex": "It is December. いまは じゅうにがつ"
+ },
+ {
+  "en": "sunny",
+  "ja": "はれ",
+  "kana": "サニー",
+  "emoji": "🌞",
+  "cat": "weather",
+  "level": 2,
+  "ex": ""
+ },
+ {
+  "en": "cloudy",
+  "ja": "くもり",
+  "kana": "クラウディ",
+  "emoji": "☁️",
+  "cat": "weather",
+  "level": 2,
+  "ex": ""
+ },
+ {
+  "en": "rainy",
+  "ja": "あめふり",
+  "kana": "レイニー",
+  "emoji": "🌧️",
+  "cat": "weather",
+  "level": 2,
+  "ex": ""
+ },
+ {
+  "en": "snowy",
+  "ja": "ゆきふり",
+  "kana": "スノーイー",
+  "emoji": "⛄",
+  "cat": "weather",
+  "level": 2,
+  "ex": ""
+ },
+ {
+  "en": "hot",
+  "ja": "あつい",
+  "kana": "ホット",
+  "emoji": "🥵",
+  "cat": "weather",
+  "level": 2,
+  "ex": ""
+ },
+ {
+  "en": "cold",
+  "ja": "さむい",
+  "kana": "コールド",
+  "emoji": "🥶",
+  "cat": "weather",
+  "level": 2,
+  "ex": ""
+ },
+ {
+  "en": "happy",
+  "ja": "うれしい",
+  "kana": "ハッピー",
+  "emoji": "😊",
+  "cat": "feeling",
+  "level": 2,
+  "ex": ""
+ },
+ {
+  "en": "sad",
+  "ja": "かなしい",
+  "kana": "サッド",
+  "emoji": "😢",
+  "cat": "feeling",
+  "level": 2,
+  "ex": ""
+ },
+ {
+  "en": "angry",
+  "ja": "おこる",
+  "kana": "アングリー",
+  "emoji": "😠",
+  "cat": "feeling",
+  "level": 2,
+  "ex": ""
+ },
+ {
+  "en": "sleepy",
+  "ja": "ねむい",
+  "kana": "スリーピー",
+  "emoji": "😪",
+  "cat": "feeling",
+  "level": 2,
+  "ex": ""
+ },
+ {
+  "en": "hungry",
+  "ja": "おなかすいた",
+  "kana": "ハングリー",
+  "emoji": "🤤",
+  "cat": "feeling",
+  "level": 2,
+  "ex": ""
+ },
+ {
+  "en": "tired",
+  "ja": "つかれた",
+  "kana": "タイアード",
+  "emoji": "😮‍💨",
+  "cat": "feeling",
+  "level": 2,
+  "ex": ""
+ },
+ {
+  "en": "surprised",
+  "ja": "びっくり",
+  "kana": "サプライズド",
+  "emoji": "😲",
+  "cat": "feeling",
+  "level": 2,
+  "ex": ""
+ },
+ {
+  "en": "thirsty",
+  "ja": "のどがかわいた",
+  "kana": "サースティ",
+  "emoji": "",
+  "cat": "feeling",
+  "level": 2,
+  "ex": "I am thirsty. のどが かわいた"
+ },
+ {
+  "en": "house",
+  "ja": "いえ",
+  "kana": "ハウス",
+  "emoji": "🏠",
+  "cat": "house",
+  "level": 2,
+  "ex": ""
+ },
+ {
+  "en": "door",
+  "ja": "ドア",
+  "kana": "ドア",
+  "emoji": "🚪",
+  "cat": "house",
+  "level": 2,
+  "ex": ""
+ },
+ {
+  "en": "window",
+  "ja": "まど",
+  "kana": "ウィンドウ",
+  "emoji": "🪟",
+  "cat": "house",
+  "level": 2,
+  "ex": ""
+ },
+ {
+  "en": "bed",
+  "ja": "ベッド",
+  "kana": "ベッド",
+  "emoji": "🛏️",
+  "cat": "house",
+  "level": 2,
+  "ex": ""
+ },
+ {
+  "en": "bath",
+  "ja": "おふろ",
+  "kana": "バス",
+  "emoji": "🛁",
+  "cat": "house",
+  "level": 2,
+  "ex": ""
+ },
+ {
+  "en": "toilet",
+  "ja": "トイレ",
+  "kana": "トイレット",
+  "emoji": "🚽",
+  "cat": "house",
+  "level": 2,
+  "ex": ""
+ },
+ {
+  "en": "kitchen",
+  "ja": "だいどころ",
+  "kana": "キッチン",
+  "emoji": "🍳",
+  "cat": "house",
+  "level": 2,
+  "ex": ""
+ },
+ {
+  "en": "chair",
+  "ja": "いす",
+  "kana": "チェア",
+  "emoji": "🪑",
+  "cat": "house",
+  "level": 2,
+  "ex": ""
+ },
+ {
+  "en": "spoon",
+  "ja": "スプーン",
+  "kana": "スプーン",
+  "emoji": "🥄",
+  "cat": "house",
+  "level": 2,
+  "ex": ""
+ },
+ {
+  "en": "fork",
+  "ja": "フォーク",
+  "kana": "フォーク",
+  "emoji": "🍴",
+  "cat": "house",
+  "level": 2,
+  "ex": ""
+ },
+ {
+  "en": "cup",
+  "ja": "コップ",
+  "kana": "カップ",
+  "emoji": "🍵",
+  "cat": "house",
+  "level": 2,
+  "ex": ""
+ },
+ {
+  "en": "soccer",
+  "ja": "サッカー",
+  "kana": "サッカー",
+  "emoji": "⚽",
+  "cat": "sport",
+  "level": 2,
+  "ex": ""
+ },
+ {
+  "en": "baseball",
+  "ja": "やきゅう",
+  "kana": "ベースボール",
+  "emoji": "⚾",
+  "cat": "sport",
+  "level": 2,
+  "ex": ""
+ },
+ {
+  "en": "tennis",
+  "ja": "テニス",
+  "kana": "テニス",
+  "emoji": "🎾",
+  "cat": "sport",
+  "level": 2,
+  "ex": ""
+ },
+ {
+  "en": "basketball",
+  "ja": "バスケットボール",
+  "kana": "バスケットボール",
+  "emoji": "🏀",
+  "cat": "sport",
+  "level": 2,
+  "ex": ""
+ },
+ {
+  "en": "volleyball",
+  "ja": "バレーボール",
+  "kana": "バレーボール",
+  "emoji": "🏐",
+  "cat": "sport",
+  "level": 2,
+  "ex": ""
+ },
+ {
+  "en": "badminton",
+  "ja": "バドミントン",
+  "kana": "バドミントン",
+  "emoji": "🏸",
+  "cat": "sport",
+  "level": 2,
+  "ex": ""
+ },
+ {
+  "en": "skiing",
+  "ja": "スキー",
+  "kana": "スキーイング",
+  "emoji": "⛷️",
+  "cat": "sport",
+  "level": 2,
+  "ex": ""
+ },
+ {
+  "en": "skating",
+  "ja": "スケート",
+  "kana": "スケーティング",
+  "emoji": "⛸️",
+  "cat": "sport",
+  "level": 2,
+  "ex": ""
+ },
+ {
+  "en": "judo",
+  "ja": "じゅうどう",
+  "kana": "ジュードー",
+  "emoji": "🥋",
+  "cat": "sport",
+  "level": 2,
+  "ex": ""
+ },
+ {
+  "en": "English",
+  "ja": "えいご",
+  "kana": "イングリッシュ",
+  "emoji": "🔤",
+  "cat": "subject",
+  "level": 2,
+  "ex": ""
+ },
+ {
+  "en": "math",
+  "ja": "さんすう",
+  "kana": "マス",
+  "emoji": "➗",
+  "cat": "subject",
+  "level": 2,
+  "ex": ""
+ },
+ {
+  "en": "science",
+  "ja": "りか",
+  "kana": "サイエンス",
+  "emoji": "🔬",
+  "cat": "subject",
+  "level": 2,
+  "ex": ""
+ },
+ {
+  "en": "music",
+  "ja": "おんがく",
+  "kana": "ミュージック",
+  "emoji": "🎵",
+  "cat": "subject",
+  "level": 2,
+  "ex": ""
+ },
+ {
+  "en": "art",
+  "ja": "ずこう",
+  "kana": "アート",
+  "emoji": "🎨",
+  "cat": "subject",
+  "level": 2,
+  "ex": ""
+ },
+ {
+  "en": "homework",
+  "ja": "しゅくだい",
+  "kana": "ホームワーク",
+  "emoji": "🧾",
+  "cat": "subject",
+  "level": 2,
+  "ex": ""
+ },
+ {
+  "en": "park",
+  "ja": "こうえん",
+  "kana": "パーク",
+  "emoji": "🏞️",
+  "cat": "place",
+  "level": 2,
+  "ex": ""
+ },
+ {
+  "en": "school",
+  "ja": "がっこう",
+  "kana": "スクール",
+  "emoji": "🏫",
+  "cat": "place",
+  "level": 2,
+  "ex": ""
+ },
+ {
+  "en": "hospital",
+  "ja": "びょういん",
+  "kana": "ホスピタル",
+  "emoji": "🏥",
+  "cat": "place",
+  "level": 2,
+  "ex": ""
+ },
+ {
+  "en": "station",
+  "ja": "えき",
+  "kana": "ステーション",
+  "emoji": "🚉",
+  "cat": "place",
+  "level": 2,
+  "ex": ""
+ },
+ {
+  "en": "library",
+  "ja": "としょかん",
+  "kana": "ライブラリー",
+  "emoji": "📖",
+  "cat": "place",
+  "level": 2,
+  "ex": ""
+ },
+ {
+  "en": "store",
+  "ja": "おみせ",
+  "kana": "ストア",
+  "emoji": "🏪",
+  "cat": "place",
+  "level": 2,
+  "ex": ""
+ },
+ {
+  "en": "restaurant",
+  "ja": "レストラン",
+  "kana": "レストラン",
+  "emoji": "🍽️",
+  "cat": "place",
+  "level": 2,
+  "ex": ""
+ },
+ {
+  "en": "zoo",
+  "ja": "どうぶつえん",
+  "kana": "ズー",
+  "emoji": "🦁",
+  "cat": "place",
+  "level": 2,
+  "ex": ""
+ },
+ {
+  "en": "museum",
+  "ja": "はくぶつかん",
+  "kana": "ミュージアム",
+  "emoji": "🏛️",
+  "cat": "place",
+  "level": 2,
+  "ex": ""
+ },
+ {
+  "en": "post office",
+  "ja": "ゆうびんきょく",
+  "kana": "ポストオフィス",
+  "emoji": "📮",
+  "cat": "place",
+  "level": 2,
+  "ex": ""
+ },
+ {
+  "en": "airport",
+  "ja": "くうこう",
+  "kana": "エアポート",
+  "emoji": "✈️",
+  "cat": "place",
+  "level": 2,
+  "ex": ""
+ },
+ {
+  "en": "farm",
+  "ja": "のうじょう",
+  "kana": "ファーム",
+  "emoji": "🚜",
+  "cat": "place",
+  "level": 2,
+  "ex": ""
+ },
+ {
+  "en": "dolphin",
+  "ja": "いるか",
+  "kana": "ドルフィン",
+  "emoji": "🐬",
+  "cat": "animal2",
+  "level": 2,
+  "ex": ""
+ },
+ {
+  "en": "whale",
+  "ja": "くじら",
+  "kana": "ホエール",
+  "emoji": "🐳",
+  "cat": "animal2",
+  "level": 2,
+  "ex": ""
+ },
+ {
+  "en": "shark",
+  "ja": "さめ",
+  "kana": "シャーク",
+  "emoji": "🦈",
+  "cat": "animal2",
+  "level": 2,
+  "ex": ""
+ },
+ {
+  "en": "snake",
+  "ja": "へび",
+  "kana": "スネイク",
+  "emoji": "🐍",
+  "cat": "animal2",
+  "level": 2,
+  "ex": ""
+ },
+ {
+  "en": "ladybug",
+  "ja": "てんとうむし",
+  "kana": "レディバグ",
+  "emoji": "🐞",
+  "cat": "animal2",
+  "level": 2,
+  "ex": ""
+ },
+ {
+  "en": "butterfly",
+  "ja": "ちょうちょ",
+  "kana": "バタフライ",
+  "emoji": "🦋",
+  "cat": "animal2",
+  "level": 2,
+  "ex": ""
+ },
+ {
+  "en": "ant",
+  "ja": "あり",
+  "kana": "アント",
+  "emoji": "🐜",
+  "cat": "animal2",
+  "level": 2,
+  "ex": ""
+ },
+ {
+  "en": "bee",
+  "ja": "みつばち",
+  "kana": "ビー",
+  "emoji": "🐝",
+  "cat": "animal2",
+  "level": 2,
+  "ex": ""
+ },
+ {
+  "en": "chicken",
+  "ja": "にわとり",
+  "kana": "チキン",
+  "emoji": "🐔",
+  "cat": "animal2",
+  "level": 2,
+  "ex": ""
+ },
+ {
+  "en": "koala",
+  "ja": "コアラ",
+  "kana": "コアラ",
+  "emoji": "🐨",
+  "cat": "animal2",
+  "level": 2,
+  "ex": ""
+ },
+ {
+  "en": "hamburger",
+  "ja": "ハンバーガー",
+  "kana": "ハンバーガー",
+  "emoji": "🍔",
+  "cat": "food2",
+  "level": 2,
+  "ex": ""
+ },
+ {
+  "en": "pizza",
+  "ja": "ピザ",
+  "kana": "ピザ",
+  "emoji": "🍕",
+  "cat": "food2",
+  "level": 2,
+  "ex": ""
+ },
+ {
+  "en": "spaghetti",
+  "ja": "スパゲッティ",
+  "kana": "スパゲッティ",
+  "emoji": "🍝",
+  "cat": "food2",
+  "level": 2,
+  "ex": ""
+ },
+ {
+  "en": "soup",
+  "ja": "スープ",
+  "kana": "スープ",
+  "emoji": "🍲",
+  "cat": "food2",
+  "level": 2,
+  "ex": ""
+ },
+ {
+  "en": "salad",
+  "ja": "サラダ",
+  "kana": "サラダ",
+  "emoji": "🥗",
+  "cat": "food2",
+  "level": 2,
+  "ex": ""
+ },
+ {
+  "en": "sandwich",
+  "ja": "サンドイッチ",
+  "kana": "サンドイッチ",
+  "emoji": "🥪",
+  "cat": "food2",
+  "level": 2,
+  "ex": ""
+ },
+ {
+  "en": "curry",
+  "ja": "カレー",
+  "kana": "カレー",
+  "emoji": "🍛",
+  "cat": "food2",
+  "level": 2,
+  "ex": ""
+ },
+ {
+  "en": "noodles",
+  "ja": "めん",
+  "kana": "ヌードルズ",
+  "emoji": "🍜",
+  "cat": "food2",
+  "level": 2,
+  "ex": ""
+ },
+ {
+  "en": "cheese",
+  "ja": "チーズ",
+  "kana": "チーズ",
+  "emoji": "🧀",
+  "cat": "food2",
+  "level": 2,
+  "ex": ""
+ },
+ {
+  "en": "honey",
+  "ja": "はちみつ",
+  "kana": "ハニー",
+  "emoji": "🍯",
+  "cat": "food2",
+  "level": 2,
+  "ex": ""
+ },
+ {
+  "en": "head",
+  "ja": "あたま",
+  "kana": "ヘッド",
+  "emoji": "🙂",
+  "cat": "body2",
+  "level": 2,
+  "ex": ""
+ },
+ {
+  "en": "face",
+  "ja": "かお",
+  "kana": "フェイス",
+  "emoji": "😀",
+  "cat": "body2",
+  "level": 2,
+  "ex": ""
+ },
+ {
+  "en": "arm",
+  "ja": "うで",
+  "kana": "アーム",
+  "emoji": "💪",
+  "cat": "body2",
+  "level": 2,
+  "ex": ""
+ },
+ {
+  "en": "knee",
+  "ja": "ひざ",
+  "kana": "ニー",
+  "emoji": "🦵",
+  "cat": "body2",
+  "level": 2,
+  "ex": ""
+ },
+ {
+  "en": "finger",
+  "ja": "ゆび",
+  "kana": "フィンガー",
+  "emoji": "👆",
+  "cat": "body2",
+  "level": 2,
+  "ex": ""
+ },
+ {
+  "en": "shirt",
+  "ja": "シャツ",
+  "kana": "シャツ",
+  "emoji": "👕",
+  "cat": "clothes",
+  "level": 2,
+  "ex": ""
+ },
+ {
+  "en": "pants",
+  "ja": "ズボン",
+  "kana": "パンツ",
+  "emoji": "👖",
+  "cat": "clothes",
+  "level": 2,
+  "ex": ""
+ },
+ {
+  "en": "shoes",
+  "ja": "くつ",
+  "kana": "シューズ",
+  "emoji": "👟",
+  "cat": "clothes",
+  "level": 2,
+  "ex": ""
+ },
+ {
+  "en": "socks",
+  "ja": "くつした",
+  "kana": "ソックス",
+  "emoji": "🧦",
+  "cat": "clothes",
+  "level": 2,
+  "ex": ""
+ },
+ {
+  "en": "hat",
+  "ja": "ぼうし",
+  "kana": "ハット",
+  "emoji": "🧢",
+  "cat": "clothes",
+  "level": 2,
+  "ex": ""
+ },
+ {
+  "en": "coat",
+  "ja": "コート",
+  "kana": "コート",
+  "emoji": "🧥",
+  "cat": "clothes",
+  "level": 2,
+  "ex": ""
+ },
+ {
+  "en": "dress",
+  "ja": "ワンピース",
+  "kana": "ドレス",
+  "emoji": "👗",
+  "cat": "clothes",
+  "level": 2,
+  "ex": ""
+ },
+ {
+  "en": "gloves",
+  "ja": "てぶくろ",
+  "kana": "グローブズ",
+  "emoji": "🧤",
+  "cat": "clothes",
+  "level": 2,
+  "ex": ""
+ },
+ {
+  "en": "umbrella",
+  "ja": "かさ",
+  "kana": "アンブレラ",
+  "emoji": "☂️",
+  "cat": "clothes",
+  "level": 2,
+  "ex": ""
+ },
+ {
+  "en": "go",
+  "ja": "いく",
+  "kana": "ゴー",
+  "emoji": "🚶",
+  "cat": "verb",
+  "level": 3,
+  "ex": ""
+ },
+ {
+  "en": "come",
+  "ja": "くる",
+  "kana": "カム",
+  "emoji": "👋",
+  "cat": "verb",
+  "level": 3,
+  "ex": ""
+ },
+ {
+  "en": "look",
+  "ja": "みる",
+  "kana": "ルック",
+  "emoji": "👀",
+  "cat": "verb",
+  "level": 3,
+  "ex": ""
+ },
+ {
+  "en": "listen",
+  "ja": "きく",
+  "kana": "リスン",
+  "emoji": "👂",
+  "cat": "verb",
+  "level": 3,
+  "ex": ""
+ },
+ {
+  "en": "speak",
+  "ja": "はなす",
+  "kana": "スピーク",
+  "emoji": "🗣️",
+  "cat": "verb",
+  "level": 3,
+  "ex": ""
+ },
+ {
+  "en": "study",
+  "ja": "べんきょうする",
+  "kana": "スタディ",
+  "emoji": "📚",
+  "cat": "verb",
+  "level": 3,
+  "ex": ""
+ },
+ {
+  "en": "make",
+  "ja": "つくる",
+  "kana": "メイク",
+  "emoji": "🔨",
+  "cat": "verb",
+  "level": 3,
+  "ex": ""
+ },
+ {
+  "en": "help",
+  "ja": "たすける",
+  "kana": "ヘルプ",
+  "emoji": "🤝",
+  "cat": "verb",
+  "level": 3,
+  "ex": ""
+ },
+ {
+  "en": "open",
+  "ja": "あける",
+  "kana": "オープン",
+  "emoji": "🚪",
+  "cat": "verb",
+  "level": 3,
+  "ex": ""
+ },
+ {
+  "en": "close",
+  "ja": "しめる",
+  "kana": "クローズ",
+  "emoji": "🔒",
+  "cat": "verb",
+  "level": 3,
+  "ex": ""
+ },
+ {
+  "en": "wash",
+  "ja": "あらう",
+  "kana": "ウォッシュ",
+  "emoji": "🧼",
+  "cat": "verb",
+  "level": 3,
+  "ex": ""
+ },
+ {
+  "en": "wait",
+  "ja": "まつ",
+  "kana": "ウェイト",
+  "emoji": "⏳",
+  "cat": "verb",
+  "level": 3,
+  "ex": "Please wait. ちょっと まってね"
+ },
+ {
+  "en": "stand",
+  "ja": "たつ",
+  "kana": "スタンド",
+  "emoji": "🧍",
+  "cat": "verb",
+  "level": 3,
+  "ex": ""
+ },
+ {
+  "en": "sit",
+  "ja": "すわる",
+  "kana": "シット",
+  "emoji": "🪑",
+  "cat": "verb",
+  "level": 3,
+  "ex": ""
+ },
+ {
+  "en": "stop",
+  "ja": "とまる",
+  "kana": "ストップ",
+  "emoji": "🛑",
+  "cat": "verb",
+  "level": 3,
+  "ex": ""
+ },
+ {
+  "en": "like",
+  "ja": "すき",
+  "kana": "ライク",
+  "emoji": "💗",
+  "cat": "verb",
+  "level": 3,
+  "ex": "I like dogs. いぬが すき"
+ },
+ {
+  "en": "want",
+  "ja": "ほしい",
+  "kana": "ウォント",
+  "emoji": "🥺",
+  "cat": "verb",
+  "level": 3,
+  "ex": "I want a cake. ケーキが ほしい"
+ },
+ {
+  "en": "have",
+  "ja": "もっている",
+  "kana": "ハブ",
+  "emoji": "🎒",
+  "cat": "verb",
+  "level": 3,
+  "ex": "I have a ball. ボールを もっている"
+ },
+ {
+  "en": "give",
+  "ja": "あげる",
+  "kana": "ギブ",
+  "emoji": "🎁",
+  "cat": "verb",
+  "level": 3,
+  "ex": ""
+ },
+ {
+  "en": "find",
+  "ja": "みつける",
+  "kana": "ファインド",
+  "emoji": "🔍",
+  "cat": "verb",
+  "level": 3,
+  "ex": "I found it! みつけた！"
+ },
+ {
+  "en": "big",
+  "ja": "おおきい",
+  "kana": "ビッグ",
+  "emoji": "🐘",
+  "cat": "adjective",
+  "level": 3,
+  "ex": ""
+ },
+ {
+  "en": "small",
+  "ja": "ちいさい",
+  "kana": "スモール",
+  "emoji": "🐜",
+  "cat": "adjective",
+  "level": 3,
+  "ex": ""
+ },
+ {
+  "en": "long",
+  "ja": "ながい",
+  "kana": "ロング",
+  "emoji": "📏",
+  "cat": "adjective",
+  "level": 3,
+  "ex": ""
+ },
+ {
+  "en": "tall",
+  "ja": "せがたかい",
+  "kana": "トール",
+  "emoji": "🦒",
+  "cat": "adjective",
+  "level": 3,
+  "ex": ""
+ },
+ {
+  "en": "new",
+  "ja": "あたらしい",
+  "kana": "ニュー",
+  "emoji": "✨",
+  "cat": "adjective",
+  "level": 3,
+  "ex": ""
+ },
+ {
+  "en": "old",
+  "ja": "ふるい",
+  "kana": "オールド",
+  "emoji": "🪵",
+  "cat": "adjective",
+  "level": 3,
+  "ex": ""
+ },
+ {
+  "en": "fast",
+  "ja": "はやい",
+  "kana": "ファスト",
+  "emoji": "🐇",
+  "cat": "adjective",
+  "level": 3,
+  "ex": ""
+ },
+ {
+  "en": "slow",
+  "ja": "おそい",
+  "kana": "スロー",
+  "emoji": "🐢",
+  "cat": "adjective",
+  "level": 3,
+  "ex": ""
+ },
+ {
+  "en": "strong",
+  "ja": "つよい",
+  "kana": "ストロング",
+  "emoji": "💪",
+  "cat": "adjective",
+  "level": 3,
+  "ex": ""
+ },
+ {
+  "en": "kind",
+  "ja": "やさしい",
+  "kana": "カインド",
+  "emoji": "😊",
+  "cat": "adjective",
+  "level": 3,
+  "ex": "She is kind. やさしい ひと"
+ },
+ {
+  "en": "cute",
+  "ja": "かわいい",
+  "kana": "キュート",
+  "emoji": "🥰",
+  "cat": "adjective",
+  "level": 3,
+  "ex": ""
+ },
+ {
+  "en": "fun",
+  "ja": "たのしい",
+  "kana": "ファン",
+  "emoji": "🎉",
+  "cat": "adjective",
+  "level": 3,
+  "ex": ""
+ },
+ {
+  "en": "delicious",
+  "ja": "おいしい",
+  "kana": "デリシャス",
+  "emoji": "😋",
+  "cat": "adjective",
+  "level": 3,
+  "ex": ""
+ },
+ {
+  "en": "beautiful",
+  "ja": "きれい",
+  "kana": "ビューティフル",
+  "emoji": "🌸",
+  "cat": "adjective",
+  "level": 3,
+  "ex": ""
+ },
+ {
+  "en": "easy",
+  "ja": "かんたん",
+  "kana": "イージー",
+  "emoji": "👌",
+  "cat": "adjective",
+  "level": 3,
+  "ex": "It is easy! かんたんだね"
+ },
+ {
+  "en": "difficult",
+  "ja": "むずかしい",
+  "kana": "ディフィカルト",
+  "emoji": "😣",
+  "cat": "adjective",
+  "level": 3,
+  "ex": "It is difficult. むずかしいね"
+ },
+ {
+  "en": "high",
+  "ja": "たかい",
+  "kana": "ハイ",
+  "emoji": "⬆️",
+  "cat": "adjective",
+  "level": 3,
+  "ex": ""
+ },
+ {
+  "en": "loud",
+  "ja": "うるさい",
+  "kana": "ラウド",
+  "emoji": "📢",
+  "cat": "adjective",
+  "level": 3,
+  "ex": ""
+ },
+ {
+  "en": "quiet",
+  "ja": "しずか",
+  "kana": "クワイエット",
+  "emoji": "🤫",
+  "cat": "adjective",
+  "level": 3,
+  "ex": "Be quiet. しずかにね"
+ },
+ {
+  "en": "warm",
+  "ja": "あたたかい",
+  "kana": "ウォーム",
+  "emoji": "🌤️",
+  "cat": "adjective",
+  "level": 3,
+  "ex": ""
+ },
+ {
+  "en": "teacher",
+  "ja": "せんせい",
+  "kana": "ティーチャー",
+  "emoji": "👩‍🏫",
+  "cat": "job",
+  "level": 3,
+  "ex": ""
+ },
+ {
+  "en": "doctor",
+  "ja": "いしゃ",
+  "kana": "ドクター",
+  "emoji": "👨‍⚕️",
+  "cat": "job",
+  "level": 3,
+  "ex": ""
+ },
+ {
+  "en": "nurse",
+  "ja": "かんごし",
+  "kana": "ナース",
+  "emoji": "👩‍⚕️",
+  "cat": "job",
+  "level": 3,
+  "ex": ""
+ },
+ {
+  "en": "police officer",
+  "ja": "けいさつかん",
+  "kana": "ポリスオフィサー",
+  "emoji": "👮",
+  "cat": "job",
+  "level": 3,
+  "ex": ""
+ },
+ {
+  "en": "farmer",
+  "ja": "のうか",
+  "kana": "ファーマー",
+  "emoji": "👨‍🌾",
+  "cat": "job",
+  "level": 3,
+  "ex": ""
+ },
+ {
+  "en": "cook",
+  "ja": "りょうりにん",
+  "kana": "クック",
+  "emoji": "👨‍🍳",
+  "cat": "job",
+  "level": 3,
+  "ex": ""
+ },
+ {
+  "en": "singer",
+  "ja": "かしゅ",
+  "kana": "シンガー",
+  "emoji": "🎤",
+  "cat": "job",
+  "level": 3,
+  "ex": ""
+ },
+ {
+  "en": "artist",
+  "ja": "がか",
+  "kana": "アーティスト",
+  "emoji": "🎨",
+  "cat": "job",
+  "level": 3,
+  "ex": ""
+ },
+ {
+  "en": "pilot",
+  "ja": "パイロット",
+  "kana": "パイロット",
+  "emoji": "👨‍✈️",
+  "cat": "job",
+  "level": 3,
+  "ex": ""
+ },
+ {
+  "en": "astronaut",
+  "ja": "うちゅうひこうし",
+  "kana": "アストロノート",
+  "emoji": "👨‍🚀",
+  "cat": "job",
+  "level": 3,
+  "ex": ""
+ },
+ {
+  "en": "spring",
+  "ja": "はる",
+  "kana": "スプリング",
+  "emoji": "🌸",
+  "cat": "season",
+  "level": 3,
+  "ex": ""
+ },
+ {
+  "en": "summer",
+  "ja": "なつ",
+  "kana": "サマー",
+  "emoji": "🌻",
+  "cat": "season",
+  "level": 3,
+  "ex": ""
+ },
+ {
+  "en": "autumn",
+  "ja": "あき",
+  "kana": "オータム",
+  "emoji": "🍁",
+  "cat": "season",
+  "level": 3,
+  "ex": ""
+ },
+ {
+  "en": "winter",
+  "ja": "ふゆ",
+  "kana": "ウィンター",
+  "emoji": "⛄",
+  "cat": "season",
+  "level": 3,
+  "ex": ""
+ },
+ {
+  "en": "birthday",
+  "ja": "たんじょうび",
+  "kana": "バースデイ",
+  "emoji": "🎂",
+  "cat": "season",
+  "level": 3,
+  "ex": ""
+ },
+ {
+  "en": "Christmas",
+  "ja": "クリスマス",
+  "kana": "クリスマス",
+  "emoji": "🎄",
+  "cat": "season",
+  "level": 3,
+  "ex": ""
+ },
+ {
+  "en": "New Year",
+  "ja": "おしょうがつ",
+  "kana": "ニューイヤー",
+  "emoji": "🎍",
+  "cat": "season",
+  "level": 3,
+  "ex": ""
+ },
+ {
+  "en": "festival",
+  "ja": "おまつり",
+  "kana": "フェスティバル",
+  "emoji": "🎏",
+  "cat": "season",
+  "level": 3,
+  "ex": ""
+ },
+ {
+  "en": "present",
+  "ja": "プレゼント",
+  "kana": "プレゼント",
+  "emoji": "🎁",
+  "cat": "season",
+  "level": 3,
+  "ex": ""
+ },
+ {
+  "en": "holiday",
+  "ja": "きゅうじつ",
+  "kana": "ホリデイ",
+  "emoji": "🏖️",
+  "cat": "season",
+  "level": 3,
+  "ex": ""
+ },
+ {
+  "en": "hello",
+  "ja": "こんにちは",
+  "kana": "ハロー",
+  "emoji": "👋",
+  "cat": "greeting",
+  "level": 3,
+  "ex": ""
+ },
+ {
+  "en": "goodbye",
+  "ja": "さようなら",
+  "kana": "グッバイ",
+  "emoji": "🙋",
+  "cat": "greeting",
+  "level": 3,
+  "ex": ""
+ },
+ {
+  "en": "thank you",
+  "ja": "ありがとう",
+  "kana": "サンキュー",
+  "emoji": "🙏",
+  "cat": "greeting",
+  "level": 3,
+  "ex": ""
+ },
+ {
+  "en": "sorry",
+  "ja": "ごめんなさい",
+  "kana": "ソーリー",
+  "emoji": "🙇",
+  "cat": "greeting",
+  "level": 3,
+  "ex": ""
+ },
+ {
+  "en": "please",
+  "ja": "おねがいします",
+  "kana": "プリーズ",
+  "emoji": "🤲",
+  "cat": "greeting",
+  "level": 3,
+  "ex": ""
+ },
+ {
+  "en": "yes",
+  "ja": "はい",
+  "kana": "イエス",
+  "emoji": "⭕",
+  "cat": "greeting",
+  "level": 3,
+  "ex": ""
+ },
+ {
+  "en": "no",
+  "ja": "いいえ",
+  "kana": "ノー",
+  "emoji": "❌",
+  "cat": "greeting",
+  "level": 3,
+  "ex": ""
+ },
+ {
+  "en": "good morning",
+  "ja": "おはよう",
+  "kana": "グッドモーニング",
+  "emoji": "🌅",
+  "cat": "greeting",
+  "level": 3,
+  "ex": ""
+ },
+ {
+  "en": "good night",
+  "ja": "おやすみなさい",
+  "kana": "グッドナイト",
+  "emoji": "🌙",
+  "cat": "greeting",
+  "level": 3,
+  "ex": ""
+ },
+ {
+  "en": "welcome",
+  "ja": "ようこそ",
+  "kana": "ウェルカム",
+  "emoji": "🎊",
+  "cat": "greeting",
+  "level": 3,
+  "ex": ""
+ },
+ {
+  "en": "friend",
+  "ja": "ともだち",
+  "kana": "フレンド",
+  "emoji": "👭",
+  "cat": "greeting",
+  "level": 3,
+  "ex": ""
+ },
+ {
+  "en": "name",
+  "ja": "なまえ",
+  "kana": "ネイム",
+  "emoji": "🏷️",
+  "cat": "greeting",
+  "level": 3,
+  "ex": "My name is Hana. なまえは はな"
+ }
+]

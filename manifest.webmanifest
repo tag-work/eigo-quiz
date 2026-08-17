@@ -1,0 +1,32 @@
+{
+ "name": "えいご シールクイズ",
+ "short_name": "えいごクイズ",
+ "description": "5歳〜小学生むけの無料英単語クイズ。読み上げ付きの4択で全300語。",
+ "start_url": "./",
+ "scope": "./",
+ "display": "standalone",
+ "background_color": "#EDEBFF",
+ "theme_color": "#EDEBFF",
+ "lang": "ja",
+ "orientation": "portrait",
+ "icons": [
+  {
+   "src": "./icons/icon-192.png",
+   "sizes": "192x192",
+   "type": "image/png",
+   "purpose": "any"
+  },
+  {
+   "src": "./icons/icon-512.png",
+   "sizes": "512x512",
+   "type": "image/png",
+   "purpose": "any"
+  },
+  {
+   "src": "./icons/icon-512.png",
+   "sizes": "512x512",
+   "type": "image/png",
+   "purpose": "maskable"
+  }
+ ]
+}

@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="description" content="5歳〜小学生むけの無料英単語クイズ。読み上げ付きの4択で、全300語をシールを集めながら覚えられます。登録不要・広告なし。">
+<link rel="canonical" href="https://tagc.works/eigo-quiz/">
+<link rel="manifest" href="./manifest.webmanifest">
+<meta name="theme-color" content="#EDEBFF">
+<link rel="apple-touch-icon" href="./icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="えいごクイズ">
+<meta property="og:type" content="website">
+<meta property="og:title" content="えいご シールクイズ｜5歳からの無料英単語クイズ">
+<meta property="og:description" content="読み上げ付きの4択クイズ。全300語をシールを集めながら覚えられます。登録不要・広告なし。">
+<meta property="og:image" content="https://tagc.works/eigo-quiz/icons/icon-512.png">
+<meta property="og:url" content="https://tagc.works/eigo-quiz/">
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}
+gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>
+<title>えいご シールクイズ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&family=Baloo+2:wght@600;800&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#EDEBFF;--ink:#2E2350;--pink:#FF6FA5;--sun:#FFD23F;--grass:#3DBE7A;--sky:#57BCF0;--skin:#FFB5A3}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{font-family:"Zen Maru Gothic","Hiragino Maru Gothic ProN",sans-serif;color:var(--ink);
+  background:var(--paper);
+  background-image:radial-gradient(circle at 15% 8%,#FFFFFF99 0 13px,transparent 14px),
+                   radial-gradient(circle at 84% 30%,#FFFFFF77 0 9px,transparent 10px),
+                   radial-gradient(circle at 40% 70%,#FFFFFF66 0 16px,transparent 17px);
+  background-size:230px 230px;min-height:100vh}
+.wrap{max-width:420px;margin:0 auto;padding:18px 16px 34px;position:relative}
+.screen{display:none}.screen.on{display:block;animation:in .3s ease-out}
+@keyframes in{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+button{font-family:inherit;color:var(--ink);cursor:pointer}
+
+/* ===== おしりん ===== */
+.mascot{width:92px;height:92px;flex:none;animation:wiggle 2.6s ease-in-out infinite}
+.mascot svg{width:100%;height:100%;overflow:visible;display:block}
+.mascot .body{fill:var(--skin);stroke:var(--ink);stroke-width:5;stroke-linejoin:round}
+.mascot .limb{stroke:var(--ink);stroke-width:5;stroke-linecap:round;fill:none}
+.mascot .hand{fill:var(--skin);stroke:var(--ink);stroke-width:5}
+.mascot .crease{stroke:var(--ink);stroke-width:4.5;fill:none;stroke-linecap:round}
+.mascot .eye{fill:var(--ink)}
+.mascot .blush{fill:var(--pink);opacity:.4}
+.mascot .happy-eye,.mascot .mouth-big{opacity:0}
+.mascot .arm{transform-box:view-box}
+.mascot .arm-l{transform-origin:30px 66px}
+.mascot .arm-r{transform-origin:90px 66px}
+@keyframes wiggle{0%,100%{transform:rotate(-2.5deg) translateY(0)}50%{transform:rotate(2.5deg) translateY(-4px)}}
+
+.mascot.cheer{animation:jump .55s cubic-bezier(.25,1.6,.4,1) 3}
+@keyframes jump{0%{transform:translateY(0) scale(1) rotate(0)}
+  28%{transform:translateY(-24px) scale(1.1,.9) rotate(-7deg)}
+  58%{transform:translateY(0) scale(.92,1.08) rotate(4deg)}
+  100%{transform:translateY(0) scale(1) rotate(0)}}
+.mascot.cheer .mouth-normal{opacity:0}.mascot.cheer .mouth-big{opacity:1}
+.mascot.cheer .eye{opacity:0}.mascot.cheer .happy-eye{opacity:1}
+.mascot.cheer .arm-l{animation:armL .28s ease-out 6 alternate}
+.mascot.cheer .arm-r{animation:armR .28s ease-out 6 alternate}
+@keyframes armL{to{transform:rotate(-42deg)}}
+@keyframes armR{to{transform:rotate(42deg)}}
+.mascot.oops{animation:wob .45s ease-in-out 2}
+@keyframes wob{0%,100%{transform:rotate(0)}25%{transform:rotate(-8deg)}75%{transform:rotate(8deg)}}
+
+.talkrow{display:flex;align-items:center;gap:10px;margin:12px 0 14px}
+.bubble{flex:1;position:relative;background:#fff;border:3.5px solid var(--ink);border-radius:20px;
+  padding:12px 14px;box-shadow:0 5px 0 var(--ink);font-size:16px;font-weight:900;line-height:1.35;
+  min-height:62px;display:flex;align-items:center}
+.bubble::before{content:"";position:absolute;left:-9px;top:50%;margin-top:-7px;width:14px;height:14px;
+  background:#fff;border-left:3.5px solid var(--ink);border-bottom:3.5px solid var(--ink);
+  transform:rotate(45deg);border-radius:0 0 3px 0}
+.bubble.pop{animation:bpop .38s cubic-bezier(.2,1.7,.4,1)}
+@keyframes bpop{0%{transform:scale(.72);opacity:0}60%{transform:scale(1.05)}100%{transform:scale(1)}}
+
+/* ===== cover ===== */
+.trust{display:flex;gap:5px;justify-content:center;flex-wrap:wrap;margin-bottom:12px}
+.trust span{font-size:10.5px;font-weight:700;background:#FFFFFFCC;border:1.5px solid var(--ink);
+  border-radius:999px;padding:4px 9px}
+.hero{position:relative;text-align:center}
+.sticker{position:absolute;font-size:26px;filter:drop-shadow(0 3px 0 #2E235022);animation:bob 3.4s ease-in-out infinite}
+.s1{top:6px;left:0;transform:rotate(-14deg)}.s2{top:0;right:2px;font-size:23px;transform:rotate(12deg);animation-delay:.7s}
+@keyframes bob{0%,100%{translate:0 0}50%{translate:0 -7px}}
+.titlecard{position:relative;display:inline-block;background:#fff;border:4px solid var(--ink);border-radius:24px;
+  padding:14px 20px 13px;box-shadow:0 7px 0 var(--ink),0 0 0 7px #fff,0 0 0 10px var(--ink);transform:rotate(-2deg)}
+.titlecard .eyebrow{font-family:"Baloo 2",sans-serif;font-weight:800;font-size:9.5px;letter-spacing:.24em;color:var(--pink);margin-bottom:4px}
+.titlecard h1{font-size:28px;font-weight:900;line-height:1.2}
+.titlecard h1 em{font-style:normal;background:linear-gradient(transparent 62%,var(--sun) 62%)}
+.titlecard .age{display:inline-block;margin-top:7px;font-size:11px;font-weight:700;background:var(--sun);
+  border:2px solid var(--ink);border-radius:999px;padding:2px 10px}
+.peel{position:absolute;right:-4px;bottom:-4px;width:26px;height:26px;
+  background:linear-gradient(135deg,#fff 46%,#E6E2FF 46%);border-right:4px solid var(--ink);
+  border-bottom:4px solid var(--ink);border-radius:0 0 22px 0}
+.demo{margin-top:6px;background:#fff;border:4px solid var(--ink);border-radius:24px;
+  box-shadow:0 7px 0 var(--ink);padding:14px 13px 15px;text-align:center;position:relative}
+.demo .tag{position:absolute;top:-13px;left:50%;transform:translateX(-50%) rotate(-1.5deg);background:var(--pink);
+  border:2.5px solid var(--ink);border-radius:999px;padding:3px 13px;font-size:11.5px;font-weight:900;
+  white-space:nowrap;box-shadow:0 3px 0 var(--ink)}
+.qrow{display:flex;align-items:center;justify-content:center;gap:9px;margin:12px 0 11px}
+.qword{font-family:"Baloo 2",sans-serif;font-weight:800;font-size:38px;line-height:1}
+.spk{font-size:14px;background:var(--sky);border:2.5px solid var(--ink);border-radius:999px;padding:7px 11px;
+  box-shadow:0 3px 0 var(--ink);font-weight:700}
+.spk:active{transform:translateY(3px);box-shadow:none}
+.choices{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.ch{font-size:21px;font-weight:900;background:#F4F3FF;border:3.5px solid var(--ink);border-radius:18px;
+  min-height:96px;padding:12px 6px;box-shadow:0 6px 0 var(--ink);word-break:break-word;line-height:1.25}
+.ch:active{transform:translateY(6px);box-shadow:none}
+.ch.ok{background:var(--grass);color:#fff}
+.ch.ng{background:#FFD9E4}.ch.dim{opacity:.35}
+.fb{margin-top:10px;font-size:13.5px;font-weight:700;min-height:19px;text-align:center}
+.cta{width:100%;font-size:25px;font-weight:900;background:var(--pink);border:4px solid var(--ink);
+  border-radius:24px;padding:17px 10px;box-shadow:0 8px 0 var(--ink);margin-top:16px;animation:tap 2.8s ease-in-out infinite}
+.cta small{display:block;font-size:11px;font-weight:700;opacity:.75;margin-top:3px}
+.cta:active{transform:translateY(8px);box-shadow:none;animation:none}
+@keyframes tap{0%,88%,100%{transform:none;box-shadow:0 8px 0 var(--ink)}92%{transform:translateY(4px);box-shadow:0 4px 0 var(--ink)}}
+.subcta{width:100%;font-size:16px;font-weight:900;background:#fff;border:3px solid var(--ink);
+  border-radius:20px;padding:13px;box-shadow:0 5px 0 var(--ink);margin-top:11px}
+.subcta:active{transform:translateY(5px);box-shadow:none}
+.albumTitle{font-size:22px;font-weight:900;text-align:center;margin:6px 0 2px}
+.albumbar{height:15px;background:#fff;border:2.5px solid var(--ink);border-radius:999px;overflow:hidden;margin:14px 0 5px}
+.albumfill{height:100%;background:var(--grass);width:0%;transition:width .5s ease-out}
+.albumnote{font-size:12px;font-weight:700;opacity:.7;text-align:right}
+.albumgrid{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;margin-top:10px}
+.cell{aspect-ratio:1;border-radius:13px;display:flex;align-items:center;justify-content:center;font-size:19px;
+  border:2.5px dashed #2E235044;background:#FFFFFF66;color:#2E235044;cursor:pointer}
+.cell.got{border:2.5px solid var(--ink);background:#fff;color:var(--ink);box-shadow:0 3px 0 var(--ink)}
+.cell.got.mastered{background:var(--sun)}
+.cell.got:active{transform:translateY(3px);box-shadow:none}
+.detail{margin-top:14px;background:#fff;border:3.5px solid var(--ink);border-radius:20px;
+  box-shadow:0 5px 0 var(--ink);padding:14px;text-align:center;font-size:14.5px;font-weight:700;min-height:64px;
+  display:flex;align-items:center;justify-content:center;line-height:1.5}
+.detail b{font-family:"Baloo 2",sans-serif;font-size:21px}
+.levels{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:16px}
+.lv{background:#fff;border:3px solid var(--ink);border-radius:16px;padding:11px 4px;font-size:15px;
+  font-weight:900;box-shadow:0 4px 0 var(--ink);line-height:1.3}
+.lv span{display:block;font-size:10px;font-weight:700;opacity:.6;margin-top:2px}
+.lv[aria-pressed="true"]{background:var(--sun)}
+.lv:active{transform:translateY(4px);box-shadow:none}
+.hintface.text{width:auto;max-width:230px;height:auto;min-height:54px;font-size:12.5px;font-weight:700;
+  line-height:1.5;padding:9px 12px;text-align:center;border-radius:14px}
+.parent{margin-top:12px;text-align:center;font-size:10.5px;line-height:1.65;opacity:.75;font-weight:500}
+.parent a{color:var(--ink);font-weight:700}
+
+/* ===== play ===== */
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:10px}
+.chipbtn{font-size:13px;font-weight:700;background:#fff;border:2.5px solid var(--ink);border-radius:999px;
+  padding:6px 12px;box-shadow:0 3px 0 var(--ink)}
+.chipbtn:active{transform:translateY(3px);box-shadow:none}
+.total{font-size:13px;font-weight:900;background:var(--sun);border:2.5px solid var(--ink);border-radius:999px;
+  padding:6px 12px;box-shadow:0 3px 0 var(--ink)}
+.page{background:#FFFFFFAA;border:3px dashed #2E235066;border-radius:20px;padding:9px 10px 8px;margin-bottom:12px}
+.page .cap{font-size:10.5px;font-weight:700;opacity:.75;margin-bottom:6px;display:flex;justify-content:space-between}
+.slots{display:grid;grid-template-columns:repeat(10,1fr);gap:5px}
+.slot{aspect-ratio:1;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:15px;
+  border:2.5px dashed #2E235055;background:#FFFFFF66;color:#2E235055}
+.slot.got{border:2.5px solid var(--ink);background:var(--sun);color:var(--ink)}
+.slot.got:nth-child(3n+2){background:var(--sky)}.slot.got:nth-child(3n){background:var(--grass)}
+.slot.miss{border:2.5px solid #2E235022;background:#fff;opacity:.4}
+.slot.pop{animation:stamp .45s cubic-bezier(.2,1.7,.4,1)}
+@keyframes stamp{0%{transform:scale(2.2) rotate(-20deg);opacity:0}55%{transform:scale(.88);opacity:1}100%{transform:none}}
+.card{background:#fff;border:4px solid var(--ink);border-radius:24px;box-shadow:0 7px 0 var(--ink);
+  padding:14px 12px 15px;text-align:center;position:relative}
+.qlabel{font-size:12.5px;font-weight:700;opacity:.6}
+.hintrow{display:flex;align-items:center;justify-content:center;gap:9px;margin-top:8px}
+.hintface{width:54px;height:54px;border-radius:16px;border:2.5px dashed #2E235055;display:flex;align-items:center;
+  justify-content:center;font-size:28px;background:#F4F3FF}
+.hintface.shown{border-style:solid;background:#fff}
+.combo{position:absolute;top:-14px;right:10px;background:var(--pink);color:#fff;border:2.5px solid var(--ink);
+  border-radius:999px;padding:3px 11px;font-size:12px;font-weight:900;box-shadow:0 3px 0 var(--ink);
+  transform:rotate(4deg);display:none}
+.combo.on{display:block;animation:stamp .4s}
+
+/* ===== celebration ===== */
+#fx{position:fixed;inset:0;pointer-events:none;z-index:60;overflow:hidden}
+.bigstamp{position:fixed;left:50%;top:40%;font-size:100px;transform:translate(-50%,-50%);
+  filter:drop-shadow(0 6px 0 #2E235033);animation:slam .62s cubic-bezier(.2,1.5,.4,1) forwards}
+@keyframes slam{0%{transform:translate(-50%,-50%) scale(3) rotate(-24deg);opacity:0}
+  38%{transform:translate(-50%,-50%) scale(.86) rotate(6deg);opacity:1}
+  55%{transform:translate(-50%,-50%) scale(1.04) rotate(-3deg)}
+  100%{transform:translate(-50%,-50%) scale(1) rotate(0);opacity:1}}
+.ring{position:fixed;left:50%;top:40%;width:80px;height:80px;margin:-40px 0 0 -40px;border-radius:50%;
+  border:7px solid var(--sun);animation:ring .7s ease-out forwards}
+@keyframes ring{0%{transform:scale(.2);opacity:1}100%{transform:scale(3.6);opacity:0}}
+.spark{position:fixed;left:50%;top:40%;font-size:26px;animation:spark .8s ease-out forwards}
+@keyframes spark{0%{transform:translate(-50%,-50%) scale(.3);opacity:1}
+  100%{transform:translate(calc(-50% + var(--dx)),calc(-50% + var(--dy))) scale(1.1) rotate(var(--rr));opacity:0}}
+.conf{position:fixed;top:-24px;width:11px;height:16px;border-radius:2px;animation:fall linear forwards}
+@keyframes fall{0%{transform:translateY(0) rotate(0);opacity:1}100%{transform:translateY(105vh) rotate(720deg);opacity:.9}}
+.word-pop{position:fixed;left:50%;top:56%;transform:translate(-50%,-50%);font-family:"Baloo 2",sans-serif;
+  font-weight:800;font-size:30px;background:#fff;border:3.5px solid var(--ink);border-radius:999px;
+  padding:6px 20px;box-shadow:0 6px 0 var(--ink);animation:wp .8s cubic-bezier(.2,1.6,.4,1) forwards}
+@keyframes wp{0%{transform:translate(-50%,-50%) scale(.4);opacity:0}
+  45%{transform:translate(-50%,-50%) scale(1.06);opacity:1}100%{transform:translate(-50%,-50%) scale(1);opacity:1}}
+.flyer{position:fixed;font-size:52px;z-index:61;pointer-events:none}
+
+/* ===== overlays ===== */
+.veil{position:fixed;inset:0;background:#2E235088;display:none;align-items:center;justify-content:center;
+  z-index:70;padding:20px}
+.veil.on{display:flex;animation:in .25s}
+.modal{background:#fff;border:4px solid var(--ink);border-radius:26px;box-shadow:0 8px 0 var(--ink);
+  padding:20px 16px;text-align:center;max-width:350px;width:100%}
+.modal h2{font-size:23px;font-weight:900;margin-bottom:6px}
+.modal p{font-size:13.5px;font-weight:600;line-height:1.7;opacity:.85;margin-bottom:14px}
+.modal .row{display:grid;gap:9px}
+.mbtn{font-size:19px;font-weight:900;background:var(--pink);border:3.5px solid var(--ink);border-radius:18px;
+  padding:16px;box-shadow:0 6px 0 var(--ink)}
+.mbtn.sub{background:#F4F3FF;font-size:15px;padding:12px;box-shadow:0 4px 0 var(--ink)}
+.mbtn:active{transform:translateY(6px);box-shadow:none}
+.mbtn.pulse{animation:tap 2.4s ease-in-out infinite}
+.pagegrid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:10px 0 14px}
+.pagegrid div{aspect-ratio:1;border:2.5px solid var(--ink);border-radius:14px;display:flex;align-items:center;
+  justify-content:center;font-size:26px;background:var(--sun)}
+.pagegrid div.empty{border-style:dashed;background:#fff;opacity:.45}
+.modal .talkrow{margin:0 0 8px}
+:focus-visible{outline:4px solid var(--pink);outline-offset:3px}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;animation-iteration-count:1!important}}
+</style>
+</head>
+<body>
+<div id="fx"></div>
+
+<div class="wrap">
+
+<!-- ========== COVER ========== -->
+<section class="screen on" id="cover">
+  <div class="trust"><span>無料</span><span>登録不要</span><span>読み上げ付き</span><span>全300問</span></div>
+  <div class="hero">
+    <div class="sticker s1">🐶</div><div class="sticker s2">🍓</div>
+    <div class="titlecard">
+      <div class="eyebrow">ENGLISH STICKER QUIZ</div>
+      <h1>えいご<br><em>シールクイズ</em></h1>
+      <div class="age">5さい〜しょうがくせい</div>
+      <div class="peel"></div>
+    </div>
+  </div>
+
+  <div class="talkrow">
+    <div class="mascot" id="coverChar"></div>
+    <div class="bubble" id="coverBubble">おしりんだよ！<br>いっしょに あそぼう！</div>
+  </div>
+
+  <div class="demo">
+    <div class="tag">まずは 1もん やってみよう！</div>
+    <div class="qrow"><div class="qword">apple</div><button class="spk" id="demoSpk">🔊 きく</button></div>
+    <div class="choices" id="demoCh">
+      <button class="ch" data-ok="0">いぬ</button>
+      <button class="ch" data-ok="1">りんご</button>
+      <button class="ch" data-ok="0">くるま</button>
+      <button class="ch" data-ok="0">ほし</button>
+    </div>
+    <div class="fb" id="demoFb">これは なんて いみ？</div>
+  </div>
+
+  <div class="levels" id="levels">
+    <button class="lv" data-lv="1" aria-pressed="true">レベル1<span>5〜6さい</span></button>
+    <button class="lv" data-lv="2" aria-pressed="false">レベル2<span>小1〜3</span></button>
+    <button class="lv" data-lv="3" aria-pressed="false">レベル3<span>小4〜6</span></button>
+  </div>
+
+  <button class="cta" id="startBtn">はじめる！<small>10もんずつ・300もんまで あそべる</small></button>
+  <button class="subcta" id="albumBtn">📒 シールずかんを みる</button>
+
+  <p class="parent">
+    1セット10問・約2分。最大300問まで続けて遊べます。<br>
+    6歳の娘のために作った無料の英単語クイズです ／ <a href="./for-parents/">おうちの方へ</a>
+  </p>
+</section>
+
+<!-- ========== PLAY ========== -->
+<section class="screen" id="play">
+  <div class="topbar">
+    <button class="chipbtn" id="quitBtn">やめる</button>
+    <button class="total" id="totalBtn">🏅 <span id="totalCnt">0</span> こ</button>
+  </div>
+
+  <div class="page">
+    <div class="cap"><span id="pageLabel">1ページめ</span><span id="pagePos">0 / 10</span></div>
+    <div class="slots" id="slots"></div>
+  </div>
+
+  <div class="card">
+    <div class="combo" id="combo">3れんぞく！</div>
+    <div class="qlabel">これは なんて いみ？</div>
+    <div class="qrow"><div class="qword" id="qword">apple</div><button class="spk" id="spk">🔊</button></div>
+    <div class="hintrow">
+      <div class="hintface" id="hint">?</div>
+      <button class="spk" id="hintBtn" style="background:var(--sun)">ヒント</button>
+    </div>
+  </div>
+
+  <div class="talkrow">
+    <div class="mascot" id="char"></div>
+    <div class="bubble" id="bubble">いっしょに がんばろう！</div>
+  </div>
+
+  <div class="choices" id="choices"></div>
+  <div class="fb" id="fb"></div>
+</section>
+
+</div>
+
+<!-- ========== ALBUM ========== -->
+<section class="screen" id="album">
+  <div class="topbar">
+    <button class="chipbtn" id="albumBack">もどる</button>
+    <button class="total" id="albumCntBtn">🏅 <span id="albumCnt">0</span> こ</button>
+  </div>
+  <h2 class="albumTitle">📒 シールずかん</h2>
+  <div class="levels" id="albumLv">
+    <button class="lv" data-alv="1" aria-pressed="true">レベル1<span id="alvn1"></span></button>
+    <button class="lv" data-alv="2" aria-pressed="false">レベル2<span id="alvn2"></span></button>
+    <button class="lv" data-alv="3" aria-pressed="false">レベル3<span id="alvn3"></span></button>
+  </div>
+  <div class="albumbar"><div class="albumfill" id="albumFill"></div></div>
+  <div class="albumnote" id="albumNote">0 / 0 あつめた</div>
+  <div class="albumgrid" id="albumGrid"></div>
+  <div class="detail" id="albumDetail">シールを おすと こえが きこえるよ</div>
+</section>
+
+<!-- ========== MODALS ========== -->
+<div class="veil" id="pageVeil">
+  <div class="modal">
+    <div class="talkrow">
+      <div class="mascot cheer" id="pageChar"></div>
+      <div class="bubble" id="pageBubble">1ページ ぜんぶ うまった！</div>
+    </div>
+    <h2 id="pageTitle">1ページ かんせい！</h2>
+    <div class="pagegrid" id="pageGrid"></div>
+    <div class="row">
+      <button class="mbtn pulse" id="contBtn">つぎの 10もん！</button>
+      <button class="mbtn sub" id="stopBtn">きょうは おしまい</button>
+    </div>
+  </div>
+</div>
+
+<div class="veil" id="breakVeil">
+  <div class="modal">
+    <div class="talkrow">
+      <div class="mascot" id="breakChar"></div>
+      <div class="bubble">15分 あそんだよ！<br>ちょっと やすもう</div>
+    </div>
+    <p>おめめを やすませて、のびを しよう！</p>
+    <div class="row">
+      <button class="mbtn sub" id="breakCont">もうすこし あそぶ</button>
+      <button class="mbtn" id="breakStop">きょうは おしまい</button>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ================= おしりん（インラインSVG） ================= */
+const MASCOT=`<svg viewBox="0 0 120 132" xmlns="http://www.w3.org/2000/svg">
+  <g class="arm arm-l"><path class="limb" d="M30 66 L13 55"/><circle class="hand" cx="9" cy="52" r="7"/></g>
+  <g class="arm arm-r"><path class="limb" d="M90 66 L107 55"/><circle class="hand" cx="111" cy="52" r="7"/></g>
+  <path class="limb" d="M48 98 L45 112"/><ellipse class="hand" cx="42" cy="115" rx="10" ry="6"/>
+  <path class="limb" d="M72 98 L75 112"/><ellipse class="hand" cx="78" cy="115" rx="10" ry="6"/>
+  <path class="body" d="M60 44 C55 24, 36 18, 24 31 C12 44, 15 74, 30 90 C43 103, 56 103, 60 94
+    C64 103, 77 103, 90 90 C105 74, 108 44, 96 31 C84 18, 65 24, 60 44 Z"/>
+  <path class="crease" d="M60 44 C57 50, 57 55, 60 61"/>
+  <ellipse class="blush" cx="29" cy="72" rx="8" ry="5"/>
+  <ellipse class="blush" cx="91" cy="72" rx="8" ry="5"/>
+  <circle class="eye" cx="41" cy="58" r="5.5"/><circle class="eye" cx="79" cy="58" r="5.5"/>
+  <path class="happy-eye" d="M34 60 Q41 51 48 60" fill="none" stroke="#2E2350" stroke-width="4.5" stroke-linecap="round"/>
+  <path class="happy-eye" d="M72 60 Q79 51 86 60" fill="none" stroke="#2E2350" stroke-width="4.5" stroke-linecap="round"/>
+  <path class="mouth-normal" d="M47 80 Q60 92 73 80" fill="none" stroke="#2E2350" stroke-width="4.5" stroke-linecap="round"/>
+  <g class="mouth-big">
+    <ellipse cx="60" cy="82" rx="14" ry="10.5" fill="#2E2350"/>
+    <ellipse cx="60" cy="87" rx="7" ry="4.5" fill="#FF6FA5"/>
+  </g>
+</svg>`;
+["coverChar","char","pageChar","breakChar"].forEach(id=>{const e=document.getElementById(id);if(e)e.innerHTML=MASCOT});
+
+/* ================= words ================= */
+/* 単語データ：本番は ./data/words.json を読む。読めなければ以下の埋め込みを使う */
+let WORDS=[
+{en:"dog",ja:"いぬ",kana:"ドッグ",emoji:"🐶",cat:"animal",level:1},
+{en:"cat",ja:"ねこ",kana:"キャット",emoji:"🐱",cat:"animal",level:1},
+{en:"bird",ja:"とり",kana:"バード",emoji:"🐦",cat:"animal",level:1},
+{en:"fish",ja:"さかな",kana:"フィッシュ",emoji:"🐟",cat:"animal",level:1},
+{en:"rabbit",ja:"うさぎ",kana:"ラビット",emoji:"🐰",cat:"animal",level:1},
+{en:"bear",ja:"くま",kana:"ベア",emoji:"🐻",cat:"animal",level:1},
+{en:"lion",ja:"ライオン",kana:"ライオン",emoji:"🦁",cat:"animal",level:1},
+{en:"elephant",ja:"ぞう",kana:"エレファント",emoji:"🐘",cat:"animal",level:1},
+{en:"monkey",ja:"さる",kana:"モンキー",emoji:"🐵",cat:"animal",level:1},
+{en:"panda",ja:"パンダ",kana:"パンダ",emoji:"🐼",cat:"animal",level:1},
+{en:"tiger",ja:"とら",kana:"タイガー",emoji:"🐯",cat:"animal",level:1},
+{en:"pig",ja:"ぶた",kana:"ピッグ",emoji:"🐷",cat:"animal",level:1},
+{en:"cow",ja:"うし",kana:"カウ",emoji:"🐮",cat:"animal",level:1},
+{en:"horse",ja:"うま",kana:"ホース",emoji:"🐴",cat:"animal",level:1},
+{en:"frog",ja:"かえる",kana:"フロッグ",emoji:"🐸",cat:"animal",level:1},
+{en:"mouse",ja:"ねずみ",kana:"マウス",emoji:"🐭",cat:"animal",level:1},
+{en:"sheep",ja:"ひつじ",kana:"シープ",emoji:"🐑",cat:"animal",level:1},
+{en:"duck",ja:"あひる",kana:"ダック",emoji:"🦆",cat:"animal",level:1},
+{en:"penguin",ja:"ペンギン",kana:"ペンギン",emoji:"🐧",cat:"animal",level:1},
+{en:"turtle",ja:"かめ",kana:"タートル",emoji:"🐢",cat:"animal",level:1},
+{en:"apple",ja:"りんご",kana:"アップル",emoji:"🍎",cat:"food",level:1},
+{en:"banana",ja:"バナナ",kana:"バナナ",emoji:"🍌",cat:"food",level:1},
+{en:"orange",ja:"オレンジ",kana:"オレンジ",emoji:"🍊",cat:"food",level:1},
+{en:"grape",ja:"ぶどう",kana:"グレープ",emoji:"🍇",cat:"food",level:1},
+{en:"strawberry",ja:"いちご",kana:"ストロベリー",emoji:"🍓",cat:"food",level:1},
+{en:"watermelon",ja:"すいか",kana:"ウォーターメロン",emoji:"🍉",cat:"food",level:1},
+{en:"peach",ja:"もも",kana:"ピーチ",emoji:"🍑",cat:"food",level:1},
+{en:"tomato",ja:"トマト",kana:"トマト",emoji:"🍅",cat:"food",level:1},
+{en:"carrot",ja:"にんじん",kana:"キャロット",emoji:"🥕",cat:"food",level:1},
+{en:"corn",ja:"とうもろこし",kana:"コーン",emoji:"🌽",cat:"food",level:1},
+{en:"potato",ja:"じゃがいも",kana:"ポテト",emoji:"🥔",cat:"food",level:1},
+{en:"bread",ja:"パン",kana:"ブレッド",emoji:"🍞",cat:"food",level:1},
+{en:"egg",ja:"たまご",kana:"エッグ",emoji:"🥚",cat:"food",level:1},
+{en:"milk",ja:"ぎゅうにゅう",kana:"ミルク",emoji:"🥛",cat:"food",level:1},
+{en:"rice",ja:"ごはん",kana:"ライス",emoji:"🍚",cat:"food",level:1},
+{en:"cake",ja:"ケーキ",kana:"ケイク",emoji:"🍰",cat:"food",level:1},
+{en:"ice cream",ja:"アイスクリーム",kana:"アイスクリーム",emoji:"🍦",cat:"food",level:1},
+{en:"candy",ja:"あめだま",kana:"キャンディ",emoji:"🍬",cat:"food",level:1},
+{en:"cookie",ja:"クッキー",kana:"クッキー",emoji:"🍪",cat:"food",level:1},
+{en:"juice",ja:"ジュース",kana:"ジュース",emoji:"🧃",cat:"food",level:1},
+{en:"red",ja:"あか",kana:"レッド",emoji:"🟥",cat:"color",level:1},
+{en:"blue",ja:"あお",kana:"ブルー",emoji:"🟦",cat:"color",level:1},
+{en:"yellow",ja:"きいろ",kana:"イエロー",emoji:"🟨",cat:"color",level:1},
+{en:"green",ja:"みどり",kana:"グリーン",emoji:"🟩",cat:"color",level:1},
+{en:"black",ja:"くろ",kana:"ブラック",emoji:"⬛",cat:"color",level:1},
+{en:"white",ja:"しろ",kana:"ホワイト",emoji:"⬜",cat:"color",level:1},
+{en:"pink",ja:"ピンク",kana:"ピンク",emoji:"🩷",cat:"color",level:1},
+{en:"purple",ja:"むらさき",kana:"パープル",emoji:"🟪",cat:"color",level:1},
+{en:"brown",ja:"ちゃいろ",kana:"ブラウン",emoji:"🟫",cat:"color",level:1},
+{en:"circle",ja:"まる",kana:"サークル",emoji:"⭕",cat:"color",level:1},
+{en:"heart",ja:"ハート",kana:"ハート",emoji:"💗",cat:"color",level:1},
+{en:"eye",ja:"め",kana:"アイ",emoji:"👁️",cat:"body",level:1},
+{en:"ear",ja:"みみ",kana:"イヤー",emoji:"👂",cat:"body",level:1},
+{en:"nose",ja:"はな",kana:"ノーズ",emoji:"👃",cat:"body",level:1},
+{en:"mouth",ja:"くち",kana:"マウス",emoji:"👄",cat:"body",level:1},
+{en:"hand",ja:"て",kana:"ハンド",emoji:"✋",cat:"body",level:1},
+{en:"foot",ja:"あし",kana:"フット",emoji:"🦶",cat:"body",level:1},
+{en:"tooth",ja:"は",kana:"トゥース",emoji:"🦷",cat:"body",level:1},
+{en:"hair",ja:"かみのけ",kana:"ヘアー",emoji:"💇",cat:"body",level:1},
+{en:"mother",ja:"おかあさん",kana:"マザー",emoji:"👩",cat:"family",level:1},
+{en:"father",ja:"おとうさん",kana:"ファーザー",emoji:"👨",cat:"family",level:1},
+{en:"sister",ja:"おねえさん",kana:"シスター",emoji:"👧",cat:"family",level:1},
+{en:"brother",ja:"おにいさん",kana:"ブラザー",emoji:"👦",cat:"family",level:1},
+{en:"baby",ja:"あかちゃん",kana:"ベイビー",emoji:"👶",cat:"family",level:1},
+{en:"grandmother",ja:"おばあさん",kana:"グランドマザー",emoji:"👵",cat:"family",level:1},
+{en:"grandfather",ja:"おじいさん",kana:"グランドファーザー",emoji:"👴",cat:"family",level:1},
+{en:"family",ja:"かぞく",kana:"ファミリー",emoji:"👨‍👩‍👧",cat:"family",level:1},
+{en:"book",ja:"ほん",kana:"ブック",emoji:"📚",cat:"school",level:1},
+{en:"pencil",ja:"えんぴつ",kana:"ペンシル",emoji:"✏️",cat:"school",level:1},
+{en:"crayon",ja:"クレヨン",kana:"クレヨン",emoji:"🖍️",cat:"school",level:1},
+{en:"scissors",ja:"はさみ",kana:"シザーズ",emoji:"✂️",cat:"school",level:1},
+{en:"bag",ja:"かばん",kana:"バッグ",emoji:"🎒",cat:"school",level:1},
+{en:"ruler",ja:"ものさし",kana:"ルーラー",emoji:"📏",cat:"school",level:1},
+{en:"clock",ja:"とけい",kana:"クロック",emoji:"🕐",cat:"school",level:1},
+{en:"ball",ja:"ボール",kana:"ボール",emoji:"⚽",cat:"school",level:1},
+{en:"doll",ja:"にんぎょう",kana:"ドール",emoji:"🪆",cat:"school",level:1},
+{en:"paper",ja:"かみ",kana:"ペーパー",emoji:"📄",cat:"school",level:1},
+{en:"car",ja:"くるま",kana:"カー",emoji:"🚗",cat:"vehicle",level:1},
+{en:"bus",ja:"バス",kana:"バス",emoji:"🚌",cat:"vehicle",level:1},
+{en:"train",ja:"でんしゃ",kana:"トレイン",emoji:"🚃",cat:"vehicle",level:1},
+{en:"airplane",ja:"ひこうき",kana:"エアプレイン",emoji:"✈️",cat:"vehicle",level:1},
+{en:"ship",ja:"ふね",kana:"シップ",emoji:"🚢",cat:"vehicle",level:1},
+{en:"bicycle",ja:"じてんしゃ",kana:"バイシクル",emoji:"🚲",cat:"vehicle",level:1},
+{en:"taxi",ja:"タクシー",kana:"タクシー",emoji:"🚕",cat:"vehicle",level:1},
+{en:"rocket",ja:"ロケット",kana:"ロケット",emoji:"🚀",cat:"vehicle",level:1},
+{en:"sun",ja:"たいよう",kana:"サン",emoji:"☀️",cat:"nature",level:1},
+{en:"moon",ja:"つき",kana:"ムーン",emoji:"🌙",cat:"nature",level:1},
+{en:"star",ja:"ほし",kana:"スター",emoji:"⭐",cat:"nature",level:1},
+{en:"rain",ja:"あめ",kana:"レイン",emoji:"🌧️",cat:"nature",level:1},
+{en:"snow",ja:"ゆき",kana:"スノー",emoji:"❄️",cat:"nature",level:1},
+{en:"cloud",ja:"くも",kana:"クラウド",emoji:"☁️",cat:"nature",level:1},
+{en:"wind",ja:"かぜ",kana:"ウィンド",emoji:"🌬️",cat:"nature",level:1},
+{en:"rainbow",ja:"にじ",kana:"レインボー",emoji:"🌈",cat:"nature",level:1},
+{en:"tree",ja:"き",kana:"ツリー",emoji:"🌳",cat:"nature",level:1},
+{en:"flower",ja:"おはな",kana:"フラワー",emoji:"🌸",cat:"nature",level:1},
+{en:"mountain",ja:"やま",kana:"マウンテン",emoji:"⛰️",cat:"nature",level:1},
+{en:"river",ja:"かわ",kana:"リバー",emoji:"🏞️",cat:"nature",level:1},
+{en:"sea",ja:"うみ",kana:"シー",emoji:"🌊",cat:"nature",level:1},
+{en:"eat",ja:"たべる",kana:"イート",emoji:"🍽️",cat:"action",level:1},
+{en:"drink",ja:"のむ",kana:"ドリンク",emoji:"🥤",cat:"action",level:1},
+{en:"run",ja:"はしる",kana:"ラン",emoji:"🏃",cat:"action",level:1},
+{en:"walk",ja:"あるく",kana:"ウォーク",emoji:"🚶",cat:"action",level:1},
+{en:"jump",ja:"とぶ",kana:"ジャンプ",emoji:"🦘",cat:"action",level:1},
+{en:"sleep",ja:"ねる",kana:"スリープ",emoji:"😴",cat:"action",level:1},
+{en:"read",ja:"よむ",kana:"リード",emoji:"📖",cat:"action",level:1},
+{en:"write",ja:"かく",kana:"ライト",emoji:"📝",cat:"action",level:1},
+{en:"sing",ja:"うたう",kana:"シング",emoji:"🎤",cat:"action",level:1},
+{en:"dance",ja:"おどる",kana:"ダンス",emoji:"💃",cat:"action",level:1},
+{en:"swim",ja:"およぐ",kana:"スイム",emoji:"🏊",cat:"action",level:1},
+{en:"play",ja:"あそぶ",kana:"プレイ",emoji:"🪀",cat:"action",level:1},
+{en:"one",ja:"いち",kana:"ワン",emoji:"1️⃣",cat:"number",level:2},
+{en:"two",ja:"に",kana:"トゥー",emoji:"2️⃣",cat:"number",level:2},
+{en:"three",ja:"さん",kana:"スリー",emoji:"3️⃣",cat:"number",level:2},
+{en:"four",ja:"よん",kana:"フォー",emoji:"4️⃣",cat:"number",level:2},
+{en:"five",ja:"ご",kana:"ファイブ",emoji:"5️⃣",cat:"number",level:2},
+{en:"six",ja:"ろく",kana:"シックス",emoji:"6️⃣",cat:"number",level:2},
+{en:"seven",ja:"なな",kana:"セブン",emoji:"7️⃣",cat:"number",level:2},
+{en:"eight",ja:"はち",kana:"エイト",emoji:"8️⃣",cat:"number",level:2},
+{en:"nine",ja:"きゅう",kana:"ナイン",emoji:"9️⃣",cat:"number",level:2},
+{en:"ten",ja:"じゅう",kana:"テン",emoji:"🔟",cat:"number",level:2},
+{en:"eleven",ja:"じゅういち",kana:"イレブン",emoji:"",cat:"number",level:2,ex:"I am eleven. わたしは じゅういち さい"},
+{en:"twelve",ja:"じゅうに",kana:"トゥエルブ",emoji:"",cat:"number",level:2,ex:"I am twelve. わたしは じゅうに さい"},
+{en:"twenty",ja:"にじゅう",kana:"トゥエンティ",emoji:"",cat:"number",level:2,ex:"I am twenty. わたしは にじゅう さい"},
+{en:"Monday",ja:"げつようび",kana:"マンデイ",emoji:"",cat:"calendar",level:2,ex:"Today is Monday. きょうは げつようび"},
+{en:"Tuesday",ja:"かようび",kana:"チューズデイ",emoji:"",cat:"calendar",level:2,ex:"Today is Tuesday. きょうは かようび"},
+{en:"Wednesday",ja:"すいようび",kana:"ウェンズデイ",emoji:"",cat:"calendar",level:2,ex:"Today is Wednesday. きょうは すいようび"},
+{en:"Thursday",ja:"もくようび",kana:"サーズデイ",emoji:"",cat:"calendar",level:2,ex:"Today is Thursday. きょうは もくようび"},
+{en:"Friday",ja:"きんようび",kana:"フライデイ",emoji:"",cat:"calendar",level:2,ex:"Today is Friday. きょうは きんようび"},
+{en:"Saturday",ja:"どようび",kana:"サタデイ",emoji:"",cat:"calendar",level:2,ex:"Today is Saturday. きょうは どようび"},
+{en:"Sunday",ja:"にちようび",kana:"サンデイ",emoji:"",cat:"calendar",level:2,ex:"Today is Sunday. きょうは にちようび"},
+{en:"January",ja:"いちがつ",kana:"ジャニュアリー",emoji:"",cat:"calendar",level:2,ex:"It is January. いまは いちがつ"},
+{en:"February",ja:"にがつ",kana:"フェブラリー",emoji:"",cat:"calendar",level:2,ex:"It is February. いまは にがつ"},
+{en:"March",ja:"さんがつ",kana:"マーチ",emoji:"",cat:"calendar",level:2,ex:"It is March. いまは さんがつ"},
+{en:"April",ja:"しがつ",kana:"エイプリル",emoji:"",cat:"calendar",level:2,ex:"It is April. いまは しがつ"},
+{en:"May",ja:"ごがつ",kana:"メイ",emoji:"",cat:"calendar",level:2,ex:"It is May. いまは ごがつ"},
+{en:"June",ja:"ろくがつ",kana:"ジューン",emoji:"",cat:"calendar",level:2,ex:"It is June. いまは ろくがつ"},
+{en:"July",ja:"しちがつ",kana:"ジュライ",emoji:"",cat:"calendar",level:2,ex:"It is July. いまは しちがつ"},
+{en:"August",ja:"はちがつ",kana:"オーガスト",emoji:"",cat:"calendar",level:2,ex:"It is August. いまは はちがつ"},
+{en:"September",ja:"くがつ",kana:"セプテンバー",emoji:"",cat:"calendar",level:2,ex:"It is September. いまは くがつ"},
+{en:"October",ja:"じゅうがつ",kana:"オクトーバー",emoji:"",cat:"calendar",level:2,ex:"It is October. いまは じゅうがつ"},
+{en:"November",ja:"じゅういちがつ",kana:"ノベンバー",emoji:"",cat:"calendar",level:2,ex:"It is November. いまは じゅういちがつ"},
+{en:"December",ja:"じゅうにがつ",kana:"ディセンバー",emoji:"",cat:"calendar",level:2,ex:"It is December. いまは じゅうにがつ"},
+{en:"sunny",ja:"はれ",kana:"サニー",emoji:"🌞",cat:"weather",level:2},
+{en:"cloudy",ja:"くもり",kana:"クラウディ",emoji:"☁️",cat:"weather",level:2},
+{en:"rainy",ja:"あめふり",kana:"レイニー",emoji:"🌧️",cat:"weather",level:2},
+{en:"snowy",ja:"ゆきふり",kana:"スノーイー",emoji:"⛄",cat:"weather",level:2},
+{en:"hot",ja:"あつい",kana:"ホット",emoji:"🥵",cat:"weather",level:2},
+{en:"cold",ja:"さむい",kana:"コールド",emoji:"🥶",cat:"weather",level:2},
+{en:"happy",ja:"うれしい",kana:"ハッピー",emoji:"😊",cat:"feeling",level:2},
+{en:"sad",ja:"かなしい",kana:"サッド",emoji:"😢",cat:"feeling",level:2},
+{en:"angry",ja:"おこる",kana:"アングリー",emoji:"😠",cat:"feeling",level:2},
+{en:"sleepy",ja:"ねむい",kana:"スリーピー",emoji:"😪",cat:"feeling",level:2},
+{en:"hungry",ja:"おなかすいた",kana:"ハングリー",emoji:"🤤",cat:"feeling",level:2},
+{en:"tired",ja:"つかれた",kana:"タイアード",emoji:"😮‍💨",cat:"feeling",level:2},
+{en:"surprised",ja:"びっくり",kana:"サプライズド",emoji:"😲",cat:"feeling",level:2},
+{en:"thirsty",ja:"のどがかわいた",kana:"サースティ",emoji:"",cat:"feeling",level:2,ex:"I am thirsty. のどが かわいた"},
+{en:"house",ja:"いえ",kana:"ハウス",emoji:"🏠",cat:"house",level:2},
+{en:"door",ja:"ドア",kana:"ドア",emoji:"🚪",cat:"house",level:2},
+{en:"window",ja:"まど",kana:"ウィンドウ",emoji:"🪟",cat:"house",level:2},
+{en:"bed",ja:"ベッド",kana:"ベッド",emoji:"🛏️",cat:"house",level:2},
+{en:"bath",ja:"おふろ",kana:"バス",emoji:"🛁",cat:"house",level:2},
+{en:"toilet",ja:"トイレ",kana:"トイレット",emoji:"🚽",cat:"house",level:2},
+{en:"kitchen",ja:"だいどころ",kana:"キッチン",emoji:"🍳",cat:"house",level:2},
+{en:"chair",ja:"いす",kana:"チェア",emoji:"🪑",cat:"house",level:2},
+{en:"spoon",ja:"スプーン",kana:"スプーン",emoji:"🥄",cat:"house",level:2},
+{en:"fork",ja:"フォーク",kana:"フォーク",emoji:"🍴",cat:"house",level:2},
+{en:"cup",ja:"コップ",kana:"カップ",emoji:"🍵",cat:"house",level:2},
+{en:"soccer",ja:"サッカー",kana:"サッカー",emoji:"⚽",cat:"sport",level:2},
+{en:"baseball",ja:"やきゅう",kana:"ベースボール",emoji:"⚾",cat:"sport",level:2},
+{en:"tennis",ja:"テニス",kana:"テニス",emoji:"🎾",cat:"sport",level:2},
+{en:"basketball",ja:"バスケットボール",kana:"バスケットボール",emoji:"🏀",cat:"sport",level:2},
+{en:"volleyball",ja:"バレーボール",kana:"バレーボール",emoji:"🏐",cat:"sport",level:2},
+{en:"badminton",ja:"バドミントン",kana:"バドミントン",emoji:"🏸",cat:"sport",level:2},
+{en:"skiing",ja:"スキー",kana:"スキーイング",emoji:"⛷️",cat:"sport",level:2},
+{en:"skating",ja:"スケート",kana:"スケーティング",emoji:"⛸️",cat:"sport",level:2},
+{en:"judo",ja:"じゅうどう",kana:"ジュードー",emoji:"🥋",cat:"sport",level:2},
+{en:"English",ja:"えいご",kana:"イングリッシュ",emoji:"🔤",cat:"subject",level:2},
+{en:"math",ja:"さんすう",kana:"マス",emoji:"➗",cat:"subject",level:2},
+{en:"science",ja:"りか",kana:"サイエンス",emoji:"🔬",cat:"subject",level:2},
+{en:"music",ja:"おんがく",kana:"ミュージック",emoji:"🎵",cat:"subject",level:2},
+{en:"art",ja:"ずこう",kana:"アート",emoji:"🎨",cat:"subject",level:2},
+{en:"homework",ja:"しゅくだい",kana:"ホームワーク",emoji:"🧾",cat:"subject",level:2},
+{en:"park",ja:"こうえん",kana:"パーク",emoji:"🏞️",cat:"place",level:2},
+{en:"school",ja:"がっこう",kana:"スクール",emoji:"🏫",cat:"place",level:2},
+{en:"hospital",ja:"びょういん",kana:"ホスピタル",emoji:"🏥",cat:"place",level:2},
+{en:"station",ja:"えき",kana:"ステーション",emoji:"🚉",cat:"place",level:2},
+{en:"library",ja:"としょかん",kana:"ライブラリー",emoji:"📖",cat:"place",level:2},
+{en:"store",ja:"おみせ",kana:"ストア",emoji:"🏪",cat:"place",level:2},
+{en:"restaurant",ja:"レストラン",kana:"レストラン",emoji:"🍽️",cat:"place",level:2},
+{en:"zoo",ja:"どうぶつえん",kana:"ズー",emoji:"🦁",cat:"place",level:2},
+{en:"museum",ja:"はくぶつかん",kana:"ミュージアム",emoji:"🏛️",cat:"place",level:2},
+{en:"post office",ja:"ゆうびんきょく",kana:"ポストオフィス",emoji:"📮",cat:"place",level:2},
+{en:"airport",ja:"くうこう",kana:"エアポート",emoji:"✈️",cat:"place",level:2},
+{en:"farm",ja:"のうじょう",kana:"ファーム",emoji:"🚜",cat:"place",level:2},
+{en:"dolphin",ja:"いるか",kana:"ドルフィン",emoji:"🐬",cat:"animal2",level:2},
+{en:"whale",ja:"くじら",kana:"ホエール",emoji:"🐳",cat:"animal2",level:2},
+{en:"shark",ja:"さめ",kana:"シャーク",emoji:"🦈",cat:"animal2",level:2},
+{en:"snake",ja:"へび",kana:"スネイク",emoji:"🐍",cat:"animal2",level:2},
+{en:"ladybug",ja:"てんとうむし",kana:"レディバグ",emoji:"🐞",cat:"animal2",level:2},
+{en:"butterfly",ja:"ちょうちょ",kana:"バタフライ",emoji:"🦋",cat:"animal2",level:2},
+{en:"ant",ja:"あり",kana:"アント",emoji:"🐜",cat:"animal2",level:2},
+{en:"bee",ja:"みつばち",kana:"ビー",emoji:"🐝",cat:"animal2",level:2},
+{en:"chicken",ja:"にわとり",kana:"チキン",emoji:"🐔",cat:"animal2",level:2},
+{en:"koala",ja:"コアラ",kana:"コアラ",emoji:"🐨",cat:"animal2",level:2},
+{en:"hamburger",ja:"ハンバーガー",kana:"ハンバーガー",emoji:"🍔",cat:"food2",level:2},
+{en:"pizza",ja:"ピザ",kana:"ピザ",emoji:"🍕",cat:"food2",level:2},
+{en:"spaghetti",ja:"スパゲッティ",kana:"スパゲッティ",emoji:"🍝",cat:"food2",level:2},
+{en:"soup",ja:"スープ",kana:"スープ",emoji:"🍲",cat:"food2",level:2},
+{en:"salad",ja:"サラダ",kana:"サラダ",emoji:"🥗",cat:"food2",level:2},
+{en:"sandwich",ja:"サンドイッチ",kana:"サンドイッチ",emoji:"🥪",cat:"food2",level:2},
+{en:"curry",ja:"カレー",kana:"カレー",emoji:"🍛",cat:"food2",level:2},
+{en:"noodles",ja:"めん",kana:"ヌードルズ",emoji:"🍜",cat:"food2",level:2},
+{en:"cheese",ja:"チーズ",kana:"チーズ",emoji:"🧀",cat:"food2",level:2},
+{en:"honey",ja:"はちみつ",kana:"ハニー",emoji:"🍯",cat:"food2",level:2},
+{en:"head",ja:"あたま",kana:"ヘッド",emoji:"🙂",cat:"body2",level:2},
+{en:"face",ja:"かお",kana:"フェイス",emoji:"😀",cat:"body2",level:2},
+{en:"arm",ja:"うで",kana:"アーム",emoji:"💪",cat:"body2",level:2},
+{en:"knee",ja:"ひざ",kana:"ニー",emoji:"🦵",cat:"body2",level:2},
+{en:"finger",ja:"ゆび",kana:"フィンガー",emoji:"👆",cat:"body2",level:2},
+{en:"shirt",ja:"シャツ",kana:"シャツ",emoji:"👕",cat:"clothes",level:2},
+{en:"pants",ja:"ズボン",kana:"パンツ",emoji:"👖",cat:"clothes",level:2},
+{en:"shoes",ja:"くつ",kana:"シューズ",emoji:"👟",cat:"clothes",level:2},
+{en:"socks",ja:"くつした",kana:"ソックス",emoji:"🧦",cat:"clothes",level:2},
+{en:"hat",ja:"ぼうし",kana:"ハット",emoji:"🧢",cat:"clothes",level:2},
+{en:"coat",ja:"コート",kana:"コート",emoji:"🧥",cat:"clothes",level:2},
+{en:"dress",ja:"ワンピース",kana:"ドレス",emoji:"👗",cat:"clothes",level:2},
+{en:"gloves",ja:"てぶくろ",kana:"グローブズ",emoji:"🧤",cat:"clothes",level:2},
+{en:"umbrella",ja:"かさ",kana:"アンブレラ",emoji:"☂️",cat:"clothes",level:2},
+{en:"go",ja:"いく",kana:"ゴー",emoji:"🚶",cat:"verb",level:3},
+{en:"come",ja:"くる",kana:"カム",emoji:"👋",cat:"verb",level:3},
+{en:"look",ja:"みる",kana:"ルック",emoji:"👀",cat:"verb",level:3},
+{en:"listen",ja:"きく",kana:"リスン",emoji:"👂",cat:"verb",level:3},
+{en:"speak",ja:"はなす",kana:"スピーク",emoji:"🗣️",cat:"verb",level:3},
+{en:"study",ja:"べんきょうする",kana:"スタディ",emoji:"📚",cat:"verb",level:3},
+{en:"make",ja:"つくる",kana:"メイク",emoji:"🔨",cat:"verb",level:3},
+{en:"help",ja:"たすける",kana:"ヘルプ",emoji:"🤝",cat:"verb",level:3},
+{en:"open",ja:"あける",kana:"オープン",emoji:"🚪",cat:"verb",level:3},
+{en:"close",ja:"しめる",kana:"クローズ",emoji:"🔒",cat:"verb",level:3},
+{en:"wash",ja:"あらう",kana:"ウォッシュ",emoji:"🧼",cat:"verb",level:3},
+{en:"wait",ja:"まつ",kana:"ウェイト",emoji:"⏳",cat:"verb",level:3,ex:"Please wait. ちょっと まってね"},
+{en:"stand",ja:"たつ",kana:"スタンド",emoji:"🧍",cat:"verb",level:3},
+{en:"sit",ja:"すわる",kana:"シット",emoji:"🪑",cat:"verb",level:3},
+{en:"stop",ja:"とまる",kana:"ストップ",emoji:"🛑",cat:"verb",level:3},
+{en:"like",ja:"すき",kana:"ライク",emoji:"💗",cat:"verb",level:3,ex:"I like dogs. いぬが すき"},
+{en:"want",ja:"ほしい",kana:"ウォント",emoji:"🥺",cat:"verb",level:3,ex:"I want a cake. ケーキが ほしい"},
+{en:"have",ja:"もっている",kana:"ハブ",emoji:"🎒",cat:"verb",level:3,ex:"I have a ball. ボールを もっている"},
+{en:"give",ja:"あげる",kana:"ギブ",emoji:"🎁",cat:"verb",level:3},
+{en:"find",ja:"みつける",kana:"ファインド",emoji:"🔍",cat:"verb",level:3,ex:"I found it! みつけた！"},
+{en:"big",ja:"おおきい",kana:"ビッグ",emoji:"🐘",cat:"adjective",level:3},
+{en:"small",ja:"ちいさい",kana:"スモール",emoji:"🐜",cat:"adjective",level:3},
+{en:"long",ja:"ながい",kana:"ロング",emoji:"📏",cat:"adjective",level:3},
+{en:"tall",ja:"せがたかい",kana:"トール",emoji:"🦒",cat:"adjective",level:3},
+{en:"new",ja:"あたらしい",kana:"ニュー",emoji:"✨",cat:"adjective",level:3},
+{en:"old",ja:"ふるい",kana:"オールド",emoji:"🪵",cat:"adjective",level:3},
+{en:"fast",ja:"はやい",kana:"ファスト",emoji:"🐇",cat:"adjective",level:3},
+{en:"slow",ja:"おそい",kana:"スロー",emoji:"🐢",cat:"adjective",level:3},
+{en:"strong",ja:"つよい",kana:"ストロング",emoji:"💪",cat:"adjective",level:3},
+{en:"kind",ja:"やさしい",kana:"カインド",emoji:"😊",cat:"adjective",level:3,ex:"She is kind. やさしい ひと"},
+{en:"cute",ja:"かわいい",kana:"キュート",emoji:"🥰",cat:"adjective",level:3},
+{en:"fun",ja:"たのしい",kana:"ファン",emoji:"🎉",cat:"adjective",level:3},
+{en:"delicious",ja:"おいしい",kana:"デリシャス",emoji:"😋",cat:"adjective",level:3},
+{en:"beautiful",ja:"きれい",kana:"ビューティフル",emoji:"🌸",cat:"adjective",level:3},
+{en:"easy",ja:"かんたん",kana:"イージー",emoji:"👌",cat:"adjective",level:3,ex:"It is easy! かんたんだね"},
+{en:"difficult",ja:"むずかしい",kana:"ディフィカルト",emoji:"😣",cat:"adjective",level:3,ex:"It is difficult. むずかしいね"},
+{en:"high",ja:"たかい",kana:"ハイ",emoji:"⬆️",cat:"adjective",level:3},
+{en:"loud",ja:"うるさい",kana:"ラウド",emoji:"📢",cat:"adjective",level:3},
+{en:"quiet",ja:"しずか",kana:"クワイエット",emoji:"🤫",cat:"adjective",level:3,ex:"Be quiet. しずかにね"},
+{en:"warm",ja:"あたたかい",kana:"ウォーム",emoji:"🌤️",cat:"adjective",level:3},
+{en:"teacher",ja:"せんせい",kana:"ティーチャー",emoji:"👩‍🏫",cat:"job",level:3},
+{en:"doctor",ja:"いしゃ",kana:"ドクター",emoji:"👨‍⚕️",cat:"job",level:3},
+{en:"nurse",ja:"かんごし",kana:"ナース",emoji:"👩‍⚕️",cat:"job",level:3},
+{en:"police officer",ja:"けいさつかん",kana:"ポリスオフィサー",emoji:"👮",cat:"job",level:3},
+{en:"farmer",ja:"のうか",kana:"ファーマー",emoji:"👨‍🌾",cat:"job",level:3},
+{en:"cook",ja:"りょうりにん",kana:"クック",emoji:"👨‍🍳",cat:"job",level:3},
+{en:"singer",ja:"かしゅ",kana:"シンガー",emoji:"🎤",cat:"job",level:3},
+{en:"artist",ja:"がか",kana:"アーティスト",emoji:"🎨",cat:"job",level:3},
+{en:"pilot",ja:"パイロット",kana:"パイロット",emoji:"👨‍✈️",cat:"job",level:3},
+{en:"astronaut",ja:"うちゅうひこうし",kana:"アストロノート",emoji:"👨‍🚀",cat:"job",level:3},
+{en:"spring",ja:"はる",kana:"スプリング",emoji:"🌸",cat:"season",level:3},
+{en:"summer",ja:"なつ",kana:"サマー",emoji:"🌻",cat:"season",level:3},
+{en:"autumn",ja:"あき",kana:"オータム",emoji:"🍁",cat:"season",level:3},
+{en:"winter",ja:"ふゆ",kana:"ウィンター",emoji:"⛄",cat:"season",level:3},
+{en:"birthday",ja:"たんじょうび",kana:"バースデイ",emoji:"🎂",cat:"season",level:3},
+{en:"Christmas",ja:"クリスマス",kana:"クリスマス",emoji:"🎄",cat:"season",level:3},
+{en:"New Year",ja:"おしょうがつ",kana:"ニューイヤー",emoji:"🎍",cat:"season",level:3},
+{en:"festival",ja:"おまつり",kana:"フェスティバル",emoji:"🎏",cat:"season",level:3},
+{en:"present",ja:"プレゼント",kana:"プレゼント",emoji:"🎁",cat:"season",level:3},
+{en:"holiday",ja:"きゅうじつ",kana:"ホリデイ",emoji:"🏖️",cat:"season",level:3},
+{en:"hello",ja:"こんにちは",kana:"ハロー",emoji:"👋",cat:"greeting",level:3},
+{en:"goodbye",ja:"さようなら",kana:"グッバイ",emoji:"🙋",cat:"greeting",level:3},
+{en:"thank you",ja:"ありがとう",kana:"サンキュー",emoji:"🙏",cat:"greeting",level:3},
+{en:"sorry",ja:"ごめんなさい",kana:"ソーリー",emoji:"🙇",cat:"greeting",level:3},
+{en:"please",ja:"おねがいします",kana:"プリーズ",emoji:"🤲",cat:"greeting",level:3},
+{en:"yes",ja:"はい",kana:"イエス",emoji:"⭕",cat:"greeting",level:3},
+{en:"no",ja:"いいえ",kana:"ノー",emoji:"❌",cat:"greeting",level:3},
+{en:"good morning",ja:"おはよう",kana:"グッドモーニング",emoji:"🌅",cat:"greeting",level:3},
+{en:"good night",ja:"おやすみなさい",kana:"グッドナイト",emoji:"🌙",cat:"greeting",level:3},
+{en:"welcome",ja:"ようこそ",kana:"ウェルカム",emoji:"🎊",cat:"greeting",level:3},
+{en:"friend",ja:"ともだち",kana:"フレンド",emoji:"👭",cat:"greeting",level:3},
+{en:"name",ja:"なまえ",kana:"ネイム",emoji:"🏷️",cat:"greeting",level:3,ex:"My name is Hana. なまえは はな"}
+];
+fetch("./data/words.json").then(r=>r.ok?r.json():null).then(j=>{if(Array.isArray(j)&&j.length>50)WORDS=j}).catch(()=>{});
+
+
+/* ---------- おしりんのセリフ ---------- */
+const PRAISE=["すごーい！","てんさい！","かんぺき！","やるじゃん！","かっこいい！","もう おぼえたね！",
+  "ピッカピカ！","さいこう！","そのちょうし！","おしり ぷりぷり！","はなまる あげる！","じょうずすぎる！"];
+const PRAISE3=["3れんぞく！ おしり ふりふり！","ノッてきたー！ すごいすごい！","とまらない！ さいきょうだね！",
+  "えいご はかせ みたい！","うわー！ また あたった！"];
+const PRAISE8=["しんじられない！ てんさい あらわる！","おしりん かんどうで ぷりっぷり！",
+  "きみ、えいごの チャンピオン！","こんなの はじめて みた！"];
+const MISS=["おしい！ いまので おぼえたね！","だいじょうぶ だいじょうぶ！","ドンマイ！ つぎ いこう！",
+  "いい ちょうせん だった！","もういっかい あえば バッチリ！"];
+const IDLE=["つぎ いくよー！","よーく きいてね！","がんばれー！","えいご だいすき！","いけるいける！"];
+const pick=a=>a[Math.random()*a.length|0];
+
+const PER_PAGE=10,BREAK_MS=15*60*1000;
+const $=id=>document.getElementById(id);
+const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.random()*(i+1)|0;[a[i],a[j]]=[a[j],a[i]]}return a};
+const reduced=matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+const store=(()=>{
+  const KEY="eigoStickerQuiz.v1",mem={};
+  const has=(()=>{try{localStorage.setItem("__t","1");localStorage.removeItem("__t");return true}catch(e){return false}})();
+  return{load(){try{return JSON.parse(has?localStorage.getItem(KEY):mem[KEY])||null}catch(e){return null}},
+    save(o){const s=JSON.stringify(o);try{has?localStorage.setItem(KEY,s):mem[KEY]=s}catch(e){}}};
+})();
+let save=store.load()||{total:0,streakMap:{},page:1};
+const st={queue:[],idx:0,combo:0,locked:false,playMs:0,timer:null};
+
+let ac;
+function beep(freqs,dur=.22,type="triangle"){
+  try{ac=ac||new (window.AudioContext||window.webkitAudioContext)();
+    freqs.forEach((f,i)=>{const o=ac.createOscillator(),g=ac.createGain();o.type=type;o.frequency.value=f;
+      const t=ac.currentTime+i*.085;g.gain.setValueAtTime(.0001,t);
+      g.gain.exponentialRampToValueAtTime(.2,t+.02);g.gain.exponentialRampToValueAtTime(.0001,t+dur);
+      o.connect(g);g.connect(ac.destination);o.start(t);o.stop(t+dur+.02)})}catch(e){}
+}
+/* 音声：まず ./audio/<単語>.mp3 を鳴らし、無ければ端末の読み上げにフォールバック */
+const aslug=t=>t.toLowerCase().replace(/[^a-z0-9]+/g,"-");
+let curAudio=null;
+function tts(t){try{if(!("speechSynthesis" in window))return;speechSynthesis.cancel();
+  const u=new SpeechSynthesisUtterance(t);u.lang="en-US";u.rate=.8;u.pitch=1.15;speechSynthesis.speak(u)}catch(e){}}
+function speak(t){
+  try{
+    if(curAudio){curAudio.pause();curAudio=null}
+    const a=new Audio("./audio/"+aslug(t)+".mp3");
+    a.onerror=()=>tts(t);
+    curAudio=a;
+    const p=a.play();
+    if(p&&p.catch)p.catch(()=>tts(t));
+  }catch(e){tts(t)}
+}
+
+function react(charId,bubbleId,text,mood){
+  const b=$(bubbleId),c=$(charId);
+  if(text){b.innerHTML=text;b.classList.remove("pop");void b.offsetWidth;b.classList.add("pop")}
+  c.classList.remove("cheer","oops");void c.offsetWidth;
+  if(mood)c.classList.add(mood);
+}
+const say=(text,mood)=>react("char","bubble",text,mood);
+
+/* ---------- 正解演出 ---------- */
+const CONF=["#FF6FA5","#FFD23F","#3DBE7A","#57BCF0","#B98CFF","#FF9F5A"];
+function celebrate(w,level,slotEl){
+  const fx=$("fx");
+  if(reduced){stampSlot(slotEl,EM(w));return}
+  const ring=document.createElement("div");ring.className="ring";fx.appendChild(ring);
+  const stamp=document.createElement("div");stamp.className="bigstamp";stamp.textContent=EM(w);fx.appendChild(stamp);
+  const pop=document.createElement("div");pop.className="word-pop";pop.textContent=w.en;fx.appendChild(pop);
+  const sparks=6+level*2;
+  for(let i=0;i<sparks;i++){
+    const s=document.createElement("div");s.className="spark";
+    const a=(Math.PI*2/sparks)*i+Math.random()*.4,d=90+Math.random()*70;
+    s.style.setProperty("--dx",Math.cos(a)*d+"px");s.style.setProperty("--dy",Math.sin(a)*d+"px");
+    s.style.setProperty("--rr",(Math.random()*360|0)+"deg");
+    s.textContent=["✨","⭐","💫","🌟"][i%4];s.style.animationDelay=(i*.02)+"s";fx.appendChild(s);
+  }
+  const n=[18,30,46][level]||18;
+  for(let i=0;i<n;i++){
+    const c=document.createElement("div");c.className="conf";c.style.left=(Math.random()*100)+"vw";
+    c.style.background=CONF[i%CONF.length];c.style.animationDuration=(1.1+Math.random()*.9)+"s";
+    c.style.animationDelay=(Math.random()*.35)+"s";if(i%3===0)c.style.borderRadius="50%";fx.appendChild(c);
+  }
+  beep([[523,659,784],[587,740,880,1047],[659,830,988,1175,1319]][level]||[523,659,784],.24);
+  setTimeout(()=>{flyToSlot(stamp,slotEl,EM(w));pop.remove()},760);
+  setTimeout(()=>fx.querySelectorAll(".conf,.spark,.ring").forEach(e=>e.remove()),2400);
+}
+function flyToSlot(stamp,slotEl,emoji){
+  const from=stamp.getBoundingClientRect(),to=slotEl.getBoundingClientRect();stamp.remove();
+  const f=document.createElement("div");f.className="flyer";f.textContent=emoji;
+  f.style.left=from.left+"px";f.style.top=from.top+"px";document.body.appendChild(f);
+  const dx=to.left+to.width/2-(from.left+from.width/2),dy=to.top+to.height/2-(from.top+from.height/2);
+  const anim=f.animate([
+    {transform:"translate(0,0) scale(1) rotate(0deg)",opacity:1},
+    {transform:`translate(${dx*.5}px,${dy*.5-60}px) scale(.8) rotate(180deg)`,opacity:1,offset:.55},
+    {transform:`translate(${dx}px,${dy}px) scale(.3) rotate(360deg)`,opacity:1}],
+    {duration:560,easing:"cubic-bezier(.45,.05,.55,.95)"});
+  anim.onfinish=()=>{f.remove();stampSlot(slotEl,emoji);beep([880,1175],.14,"sine")};
+}
+function stampSlot(el,emoji){el.textContent=emoji;el.classList.add("got","pop")}
+
+/* ---------- 出題 ---------- */
+function pool(){const lv=save.level||1;const p=WORDS.filter(w=>w.level===lv);return p.length?p:WORDS}
+function pickWords(n){
+  const m=save.streakMap,P=pool();
+  const fresh=P.filter(w=>!(w.en in m));
+  const weak=P.filter(w=>m[w.en]!==undefined&&m[w.en]<3);
+  const done=P.filter(w=>m[w.en]>=3);
+  return [...shuffle(fresh),...shuffle(weak),...shuffle(done)].slice(0,n);
+}
+const EM=w=>w.emoji||"⭐";
+function showHint(w){
+  const h=$("hint");
+  if(w.emoji){h.textContent=w.emoji;h.classList.remove("text")}
+  else{h.textContent=w.ex||w.ja;h.classList.add("text")}
+  h.classList.add("shown");
+}
+function buildPage(){
+  st.queue=pickWords(PER_PAGE);st.idx=0;
+  $("slots").innerHTML=st.queue.map(()=>'<div class="slot">・</div>').join("");
+  $("pageLabel").textContent=save.page+"ページめ";
+  say(pick(IDLE));render();
+}
+function render(){
+  st.locked=false;
+  const w=st.queue[st.idx];
+  $("pagePos").textContent=st.idx+" / "+PER_PAGE;
+  $("totalCnt").textContent=save.total;
+  $("qword").textContent=w.en;
+  $("hint").textContent="?";$("hint").classList.remove("shown","text");
+  $("fb").textContent="";
+  $("combo").classList.toggle("on",st.combo>=3);
+  $("combo").textContent=st.combo+"れんぞく！";
+  const P=pool();
+  let src=P.filter(x=>x.cat===w.cat&&x.en!==w.en);
+  if(src.length<3)src=P.filter(x=>x.en!==w.en);
+  const opts=shuffle([w,...shuffle(src).slice(0,3)]);
+  $("choices").innerHTML="";
+  opts.forEach(o=>{
+    const b=document.createElement("button");b.className="ch";b.textContent=o.ja;
+    b.onclick=()=>answer(b,o,w);$("choices").appendChild(b);
+  });
+  setTimeout(()=>speak(w.en),320);
+}
+function answer(btn,picked,w){
+  if(st.locked)return;st.locked=true;
+  const ok=picked.en===w.en;
+  document.querySelectorAll("#choices .ch").forEach(b=>{
+    if(b.textContent===w.ja)b.classList.add("ok");
+    else if(b===btn)b.classList.add("ng");else b.classList.add("dim");
+    b.disabled=true;
+  });
+  showHint(w);
+  const slot=$("slots").children[st.idx];
+  if(ok){
+    st.combo++;save.total++;
+    save.streakMap[w.en]=(save.streakMap[w.en]||0)+1;
+    const level=st.combo>=8?2:st.combo>=3?1:0;
+    celebrate(w,level,slot);
+    say(level===2?pick(PRAISE8):level===1?pick(PRAISE3):pick(PRAISE),"cheer");
+    $("fb").innerHTML=(st.combo>=3?"🔥 "+st.combo+"れんぞく！ ":"")+"<b>"+w.en+"</b>（"+(w.kana||"")+"）＝ "+w.ja;
+  }else{
+    st.combo=0;save.streakMap[w.en]=0;
+    slot.classList.add("miss");slot.textContent="・";
+    beep([300,240],.2);speak(w.en);
+    say(pick(MISS),"oops");
+    $("fb").innerHTML="こたえは <b>"+w.en+"</b>（"+(w.kana||"")+"）＝ "+w.ja;
+  }
+  $("totalCnt").textContent=save.total;
+  $("pagePos").textContent=(st.idx+1)+" / "+PER_PAGE;
+  store.save(save);
+  setTimeout(()=>{if(st.idx===PER_PAGE-1)finishPage();else{st.idx++;render()}},ok?1900:2400);
+}
+
+/* ---------- ページ完成（自動では進まない） ---------- */
+function finishPage(){
+  const got=[...$("slots").children].map((s,i)=>s.classList.contains("got")?EM(st.queue[i]):null);
+  const n=got.filter(Boolean).length;
+  $("pageGrid").innerHTML=got.map(e=>e?"<div>"+e+"</div>":'<div class="empty">・</div>').join("");
+  $("pageTitle").textContent=save.page+"ページ かんせい！";
+  react("pageChar","pageBubble",
+    n===10?"ぜんぶ せいかい！<br>おしりん びっくり！":n>=7?"すごい！ "+n+"まいも あつめたね！":"よく がんばった！<br>シール "+n+"まい ゲット！",
+    "cheer");
+  $("pageVeil").classList.add("on");
+  beep([523,659,784,1047],.3);
+  if(!reduced)for(let i=0;i<44;i++){
+    const c=document.createElement("div");c.className="conf";c.style.left=(Math.random()*100)+"vw";
+    c.style.background=CONF[i%CONF.length];c.style.animationDuration=(1.2+Math.random())+"s";
+    c.style.animationDelay=(Math.random()*.6)+"s";$("fx").appendChild(c);
+  }
+  setTimeout(()=>$("fx").querySelectorAll(".conf").forEach(e=>e.remove()),3200);
+}
+function nextPage(){$("pageVeil").classList.remove("on");save.page++;store.save(save);buildPage()}
+
+function startClock(){clearInterval(st.timer);
+  st.timer=setInterval(()=>{st.playMs+=1000;if(st.playMs>=BREAK_MS){st.playMs=0;showBreak()}},1000)}
+function showBreak(){if($("pageVeil").classList.contains("on"))return;$("breakVeil").classList.add("on");clearInterval(st.timer)}
+function show(id){document.querySelectorAll(".screen").forEach(s=>s.classList.toggle("on",s.id===id));scrollTo(0,0)}
+function goHome(){clearInterval(st.timer);$("pageVeil").classList.remove("on");$("breakVeil").classList.remove("on");
+  refreshCover();show("cover")}
+function refreshCover(){
+  const lv=save.level||1, n=WORDS.filter(w=>w.level===lv).length||300;
+  document.querySelectorAll(".lv").forEach(b=>b.setAttribute("aria-pressed",b.dataset.lv==String(lv)));
+  $("startBtn").innerHTML=save.total>0
+    ? 'つづきを あそぶ！<small>'+save.total+'こ あつめたよ ／ レベル'+lv+'は '+n+'もん</small>'
+    : 'はじめる！<small>10もんずつ・レベル'+lv+'は '+n+'もん</small>';
+}
+document.querySelectorAll(".lv").forEach(b=>{
+  b.onclick=()=>{save.level=Number(b.dataset.lv);store.save(save);refreshCover()};
+});
+refreshCover();
+
+$("demoSpk").onclick=()=>speak("apple");
+document.querySelectorAll("#demoCh .ch").forEach(b=>{
+  b.onclick=()=>{
+    if($("demoCh").dataset.done)return;$("demoCh").dataset.done="1";
+    const ok=b.dataset.ok==="1";
+    document.querySelectorAll("#demoCh .ch").forEach(x=>{
+      if(x.dataset.ok==="1")x.classList.add("ok");else if(x===b)x.classList.add("ng");else x.classList.add("dim")});
+    $("demoFb").innerHTML=ok?"🍎 せいかい！ シールを 1まい ゲット":"おしい！ こたえは <b>りんご</b>だよ";
+    react("coverChar","coverBubble",ok?"すごーい！<br>いっしょに つづき やろう！":"だいじょうぶ！<br>いっしょに おぼえよう！","cheer");
+    speak("apple");beep(ok?[523,659,784]:[300,240],.22);
+    $("startBtn").innerHTML='つづきを あそぶ！<small>10もんずつ・300もんまで あそべる</small>';
+  };
+});
+/* ---------- シールずかん ---------- */
+let albumLv=1, albumFrom="cover";
+function openAlbum(from){albumFrom=from;albumLv=save.level||1;show("album");renderAlbum()}
+function renderAlbum(){
+  const m=save.streakMap;
+  [1,2,3].forEach(l=>{const e=$("alvn"+l);if(e)e.textContent=WORDS.filter(w=>w.level===l).length+"こ"});
+  const list=WORDS.filter(w=>w.level===albumLv);
+  const got=list.filter(w=>(m[w.en]||0)>0).length;
+  $("albumCnt").textContent=save.total;
+  $("albumFill").style.width=(list.length?got/list.length*100:0)+"%";
+  $("albumNote").textContent=got+" / "+list.length+" あつめた";
+  document.querySelectorAll("#albumLv .lv").forEach(b=>b.setAttribute("aria-pressed",b.dataset.alv==String(albumLv)));
+  const g=$("albumGrid");g.innerHTML="";
+  list.forEach(w=>{
+    const n=m[w.en]||0;
+    const d=document.createElement("div");
+    d.className="cell"+(n>0?" got":"")+(n>=3?" mastered":"");
+    d.textContent=n>0?(w.emoji||"⭐"):"?";
+    d.onclick=()=>{
+      if(n>0){speak(w.en);
+        $("albumDetail").innerHTML="<span><b>"+w.en+"</b>（"+(w.kana||"")+"）<br>＝ "+w.ja+(n>=3?" ✨おぼえた！":"")+"</span>";
+      }else{
+        $("albumDetail").textContent="まだ あつめてないよ！ クイズで ゲットしよう";
+      }
+    };
+    g.appendChild(d);
+  });
+}
+document.querySelectorAll("#albumLv .lv").forEach(b=>{
+  b.onclick=()=>{albumLv=Number(b.dataset.alv);renderAlbum()};
+});
+$("albumBtn").onclick=()=>openAlbum("cover");
+$("totalBtn").onclick=()=>openAlbum("play");
+$("albumBack").onclick=()=>{albumFrom==="play"?show("play"):(refreshCover(),show("cover"))};
+
+$("startBtn").onclick=()=>{show("play");buildPage();startClock()};
+$("quitBtn").onclick=goHome;
+$("spk").onclick=()=>speak(st.queue[st.idx].en);
+$("hintBtn").onclick=()=>showHint(st.queue[st.idx]);
+$("contBtn").onclick=nextPage;
+$("stopBtn").onclick=goHome;
+$("breakCont").onclick=()=>{$("breakVeil").classList.remove("on");startClock()};
+$("breakStop").onclick=goHome;
+
+if("serviceWorker" in navigator)addEventListener("load",()=>navigator.serviceWorker.register("./sw.js").catch(()=>{}));
+</script>
+</body>
+</html>
