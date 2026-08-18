@@ -16,6 +16,25 @@ GA = f"""<!-- Google Analytics -->
 gtag('js',new Date());gtag('config','{GA_ID}');</script>
 """
 
+# ===== AdSense =====
+# 広告を出すのは words/ と for-parents/ だけ。クイズ本体（index.html）には入れない。
+# for-parents に「お子さんが遊ぶクイズ画面には広告を表示しません」と明記しているため。
+ADS_CLIENT = "ca-pub-7791812422300435"
+ADS_SLOT = "5102407537"
+ADS_HEAD = (f'<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js'
+            f'?client={ADS_CLIENT}" crossorigin="anonymous"></script>')
+# 子ども向けコンテンツなので data-tag-for-child-directed-treatment を付ける
+ADS_UNIT = f'''<div class="adbox">
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="{ADS_CLIENT}"
+       data-ad-slot="{ADS_SLOT}"
+       data-ad-format="auto"
+       data-full-width-responsive="true"
+       data-tag-for-child-directed-treatment="1"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({{}});</script>
+</div>'''
+
 WORDS = json.load(open(os.path.join(ROOT, "data/words.json"), encoding="utf-8"))
 
 GROUPS = [
@@ -69,7 +88,9 @@ padding:16px;font-size:20px;font-weight:900;text-decoration:none;box-shadow:0 6p
 font-weight:900;font-size:14px;box-shadow:0 3px 0 var(--ink)}
 .grid a span{display:block;font-size:11px;font-weight:700;opacity:.6}
 footer{margin-top:40px;font-size:12px;opacity:.7;text-align:center}
-ul{margin:0 0 12px 20px;font-size:15px}li{margin-bottom:5px}'''
+ul{margin:0 0 12px 20px;font-size:15px}li{margin-bottom:5px}
+/* 広告が想定より大きく描画されてもレイアウトを押し広げないための保険。省略しないこと */
+.adbox{max-width:100%;overflow:hidden;margin:28px auto 0}'''
 
 def crumbs_ld(items):
     """items: [(name, url or None)] — 最後は現在ページなので url は None"""
@@ -106,7 +127,9 @@ def page(title, desc, canon, body, crumb_items=()):
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&family=Baloo+2:wght@600;800&display=swap" rel="stylesheet">
 <style>{CSS}</style>{ld}
+{ADS_HEAD}
 {GA}</head><body><div class="wrap">{crumb}{body}
+{ADS_UNIT}
 <footer>© <a href="https://tagc.works/">tagc</a> ／ <a href="{BASE}/">えいご シールクイズ</a> ／ <a href="{BASE}/for-parents/">おうちの方へ</a></footer>
 </div></body></html>'''
 
